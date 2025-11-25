@@ -44,9 +44,9 @@ export default function Hero() {
           transition={{ delay: 0.2 }}
           className="text-5xl md:text-7xl font-bold tracking-tight leading-tight mb-6"
         >
-          Kuliah 4 Tahun Cuma Buat <br />
+          Persiapkan Karir Masa Depan <br />
           <span className="bg-clip-text text-transparent bg-gradient-to-r from-slate-300 via-white to-slate-400">
-            Jadi Pengangguran?
+            Di Era Artificial Intellegence
           </span>
         </motion.h1>
         <motion.div 
