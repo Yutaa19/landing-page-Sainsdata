@@ -73,10 +73,6 @@ export default function Profile() {
     return (
         <section className='relative min-h-screen flex items-center justify-center overflow-hidden pt-20 bg-black py-20'>
             
-            {/* Background gradasi effect */}
-            <div className='absolute top-[10px] left-1/2 -translate-x-1/2 w-[300px] lg:w-[600px] h-[300px] lg:h-[600px] bg-slate-500/30 rounded-full blur-[80px] lg:blur-[120px] z-0'></div>
-            <div className='absolute top-[-150px] left-1/2 -translate-x-1/2 w-[200px] lg:w-[300px] h-[200px] lg:h-[300px] bg-gray-200/20 rounded-full blur-[60px] lg:blur-[80px] z-0'></div>
-
             <div className='container mx-auto px-6 z-10 relative'>
                 
                 {/* Judul */}

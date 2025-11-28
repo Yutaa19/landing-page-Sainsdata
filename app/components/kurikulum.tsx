@@ -2,10 +2,11 @@
 
 import Image from "next/image";
 import { motion } from "framer-motion";
-import { CheckCircle2 } from "lucide-react"; // Pastikan install lucide-react
+import { CheckCircle2, ArrowUpRight } from "lucide-react"; // Pastikan install lucide-react
 
 // === 1. DATABASE MATA KULIAH (14 ITEM) ===
 // Edit teksnya di sini, nanti tampilan otomatis berubah.
+
 const materiKuliah = [
   { id: 1, title: "Pemograman Dasar", desc: "D sini Kalian akan belajar struktur dasar Python mulai dari Variabel, Tipe Data, hingga Perulangan (Looping) dengan studi kasus nyata. Kalian juga akan mendapatkan 'Blueprint' Logika yang bisa dipakai di bahasa pemrograman apa pun. Cocok untuk pemula yang belum pernah menyentuh koding sama sekali jadi jangan khawatir jika belum ada background IT. ini adalah fondasi wajib untuk menjadi Data Scientist handal.", image: "/images/ular.png" },
   { id: 2, title: "Aljabar Linear Elementer", desc: "Di Mata Kuliah ini kalian akan belajar cara 'bermain' dengan Sistem Persamaan Linear tanpa pusing, membedah struktur Fungsi Kuadrat untuk mengasah pola pikir, dan melihat keindahan pola dalam Barisan & Deret. Kalian akan diajarkan teknik reverse-engineering soal cerita menjadi model matematika yang sederhana dan elegan.", image: "/images/aljabar.png" },
@@ -24,12 +25,16 @@ const materiKuliah = [
 ];
 
 export default function Curriculum() {
+
+  const scroolUkt = () => {
+    const element = document.getElementById('biaya-ukt')
+    if (element) {
+      element.scrollIntoView({ behavior: 'smooth'})
+    }
+  }
   return (
     <section className="relative py-20 bg-black overflow-hidden">
-
-      {/* Background Glow Hiasan */}
-      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[500px] h-[500px] bg-blue-900/20 blur-[120px] rounded-full -z-10" />
-
+      
       <div className="container mx-auto px-6">
 
         <motion.div
@@ -119,6 +124,34 @@ export default function Curriculum() {
           })}
 
         </div>
+        <button onClick={scroolUkt} className="
+            group relative z-50
+            flex items-center justify-center gap-3
+            px-8 py-4
+            bg-gradient-to-br from-blue-500 to-blue-700
+            hover:from-blue-400 hover:to-blue-600
+            text-white text-lg font-bold
+            rounded-2xl
+            shadow-[0_0_20px_rgba(148,163,184,0.3)] 
+    
+            /* Hover: Shadow melebar dan lebih terang (seperti lampu sorot) */
+            hover:shadow-[0_10px_40px_rgba(148,163,184,0.6)]
+                    
+            /* --- BAGIAN PENTING (ANIMASI & CURSOR) --- */
+            cursor-pointer               /* Biar kursor jadi tangan */
+            transition-all               /* Animasikan semua perubahan */
+            duration-300                 /* Durasi 0.3 detik (pas, gak kecepetan/kelambatan) */
+            ease-out                     /* Pelembut: Melambat di akhir (biar gak kaku) */
+            hover:-translate-y-1         /* Efek naik sedikit */
+            active:scale-95
+            left-125
+            mt-10              /* Efek 'kepencet' (mengecil dikit pas diklik) */
+        ">
+          {/* BAGIAN IKON */}
+   
+
+          Gabung Sekarang
+        </button>
       </div>
       <div className="absolute bottom-0 left-0 w-full h-32 bg-gradient-to-t from-black via-black/50 to-transparent z-10"></div>
       <div className="absolute bottom-0 left-0 w-full h-[1px] bg-gradient-to-r from-transparent via-blue-500 to-transparent z-20 opacity-50"></div>
