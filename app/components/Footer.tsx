@@ -6,7 +6,7 @@ import { MessageCircle } from "lucide-react"; // Ikon WA
 
 export default function Footer() {
   return (
-    <footer className="bg-black border-t border-white/10 pt-20 pb-10 relative overflow-hidden">
+    <footer className="bg-black border-t border-white/10 pt-20 pb-10 relative overflow-hidden ">
       
       {/* Background Glow Hiasan (Opsional - Biar nyambung sama section atas) */}
       <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-[800px] h-[300px] bg-blue-900/10 blur-[120px] rounded-full pointer-events-none -z-10"></div>

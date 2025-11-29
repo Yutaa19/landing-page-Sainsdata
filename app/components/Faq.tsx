@@ -42,30 +42,37 @@ export default function FAQ() {
   }
 
   return (
-    <section className="py-20 bg-black relative overflow-hidden">
+  <section className="py-20 bg-black relative overflow-hidden selection:bg-cyan-500 selection:text-white">
       <div className="container mx-auto px-6 relative z-10">
         
+        {/* GRID LAYOUT RESPONSIVE:
+            - Mobile: 1 Kolom (Tumpuk ke bawah)
+            - Laptop (lg): 12 Kolom (Kiri Kanan)
+        */}
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-20 items-start">
           
           {/* === BAGIAN KIRI: HEADLINE & CTA === */}
-          <div className="lg:col-span-5 sticky top-24">
-            <h2 className="text-4xl md:text-6xl font-bold text-white leading-tight mb-6">
+          {/* Di Mobile: relative (ikut scroll). Di Laptop: sticky (nempel saat discroll) */}
+          <div className="lg:col-span-5 relative lg:sticky lg:top-32">
+            
+            <h2 className="text-3xl md:text-5xl lg:text-6xl font-bold text-white leading-tight mb-6">
               Frequently <br />
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-cyan-400">
                 Asked Questions
               </span>
             </h2>
-            <p className="text-slate-400 text-lg mb-8 leading-relaxed">
+            
+            <p className="text-slate-400 text-base md:text-lg mb-8 leading-relaxed">
               Masih ragu atau punya pertanyaan spesifik tentang masa depanmu di Sains Data? Jangan dipendam sendiri.
             </p>
 
             {/* Tombol WA */}
             <Link href="https://wa.me/6285799350924" className="
-                group relative z-50 cursor-pointer
-                flex items-center gap-3
-                px-8 py-4
+                group relative z-50 cursor-pointer inline-flex
+                items-center gap-3
+                px-6 py-3 md:px-8 md:py-4
                 bg-blue-600 hover:bg-blue-500
-                text-white font-bold text-lg 
+                text-white font-bold text-base md:text-lg 
                 rounded-full 
                 shadow-[0_0_20px_rgba(37,99,235,0.5)]
                 hover:shadow-[0_10px_30px_rgba(37,99,235,0.8)]
@@ -79,7 +86,7 @@ export default function FAQ() {
 
 
           {/* === BAGIAN KANAN: LIST PERTANYAAN (ACCORDION) === */}
-          <div className="lg:col-span-7 flex flex-col gap-4">
+          <div className="lg:col-span-7 flex flex-col gap-4 w-full">
             {faqData.map((item, index) => {
               const isOpen = openIndex === index;
 
@@ -90,22 +97,26 @@ export default function FAQ() {
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
                   transition={{ delay: index * 0.1 }}
-                  className={`border-b border-slate-800 ${isOpen ? 'bg-slate-900/30' : 'bg-transparent'} rounded-xl transition-colors duration-300`}
+                  className={`
+                    border-b border-slate-800 rounded-xl transition-colors duration-300
+                    ${isOpen ? 'bg-slate-900/30' : 'bg-transparent'}
+                  `}
                 >
-                  {/* Header Pertanyaan (Klik di sini) */}
+                  {/* Header Pertanyaan */}
                   <button
                     onClick={() => toggleFAQ(index)}
-                    className="w-full flex items-center justify-between py-6 px-4 text-left focus:outline-none"
+                    className="w-full flex items-start md:items-center justify-between py-5 px-4 text-left focus:outline-none"
                   >
-                    <span className={`text-lg md:text-xl font-semibold transition-colors duration-300 ${isOpen ? 'text-blue-400' : 'text-slate-200'}`}>
+                    <span className={`text-base md:text-xl font-semibold transition-colors duration-300 pr-4 ${isOpen ? 'text-blue-400' : 'text-slate-200'}`}>
                       {item.question}
                     </span>
-                    <span className="ml-4 flex-shrink-0 text-slate-400">
-                      {isOpen ? <Minus className="w-6 h-6 text-blue-400" /> : <Plus className="w-6 h-6" />}
+                    {/* Ikon Plus/Minus (Flex Shrink agar tidak gepeng) */}
+                    <span className="flex-shrink-0 mt-1 md:mt-0 text-slate-400">
+                      {isOpen ? <Minus className="w-5 h-5 md:w-6 md:h-6 text-blue-400" /> : <Plus className="w-5 h-5 md:w-6 md:h-6" />}
                     </span>
                   </button>
 
-                  {/* Isi Jawaban (Animasi Slide Down) */}
+                  {/* Isi Jawaban */}
                   <AnimatePresence>
                     {isOpen && (
                       <motion.div
@@ -115,7 +126,7 @@ export default function FAQ() {
                         transition={{ duration: 0.3, ease: "easeInOut" }}
                         className="overflow-hidden"
                       >
-                        <div className="px-4 pb-6 text-slate-400 leading-relaxed text-base">
+                        <div className="px-4 pb-6 text-slate-400 leading-relaxed text-sm md:text-base">
                           {item.answer}
                         </div>
                       </motion.div>

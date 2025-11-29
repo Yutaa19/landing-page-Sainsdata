@@ -14,7 +14,7 @@ const webinars = [
 
 export default function ExclusiveWebinar() {
   return (
-    <section className="py-20 bg-black">
+    <section className="py-20 bg-black selection:bg-cyan-500 selection:text-white">
       <div className="container mx-auto px-4 md:px-6">
         
         {/* === 1. HEADER TEXT === */}
@@ -35,12 +35,33 @@ export default function ExclusiveWebinar() {
         {/* === 2. WRAPPER KOTAK UTAMA (BORDER UNGU) === */}
         <div className="relative mt-10">
             
-            {/* BADGE HIJAU (VALUE) - POSISI ABSOLUTE DI TENGAH ATAS */}
-            <div className="absolute -top-6 left-1/2 -translate-x-1/2 z-20">
-                <div className="bg-blue-600 text-white font-bold px-8 py-2 rounded-t-xl text-sm md:text-base shadow-[0_0_20px_rgba(22,163,74,0.6)] uppercase tracking-wider">
-                    Praktisi dan Akademisi berpengalaman 1 Dekade lebih
-                </div>
-            </div>
+           {/* BADGE HIJAU (VALUE) - POSISI ABSOLUTE DI TENGAH ATAS */}
+<div className="absolute -top-6 left-1/2 -translate-x-1/2 z-20 w-full flex justify-center">
+    <div className="
+        bg-blue-600 text-white font-bold 
+        
+        /* RESPONSIVE PADDING */
+        px-4 py-2           /* Mobile: Padding lebih kecil */
+        md:px-8             /* Desktop: Padding lebar */
+        
+        rounded-t-xl 
+        
+        /* RESPONSIVE TEXT SIZE */
+        text-[10px]         /* Mobile: Font kecil agar muat */
+        sm:text-xs          /* Tablet: Sedikit lebih besar */
+        md:text-base        /* Desktop: Normal */
+        
+        shadow-[0_0_20px_rgba(22,163,74,0.6)] 
+        uppercase tracking-wider
+        
+        /* RESPONSIVE WRAPPING (Supaya rapi di HP kecil) */
+        whitespace-nowrap   /* Default: Satu baris */
+        max-w-[90%]         /* Jaga-jaga: Jangan lebih lebar dari 90% layar HP */
+        overflow-hidden text-ellipsis /* Kalau kepanjangan, potong rapi */
+    ">
+        Di Isi Oleh Praktisi Dan Akademisi
+    </div>
+</div>
 
             {/* KOTAK BORDER GLOWING */}
             <motion.div 

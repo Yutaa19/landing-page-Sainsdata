@@ -1,8 +1,8 @@
-"use client"; // Wajib Client Component karena ada interaksi scroll
+"use client";
 
 import Link from "next/link";
 import { useState, useEffect } from "react";
-import { motion } from "framer-motion"; // Animasi masuk
+import { motion } from "framer-motion";
 
 export default function Navbar() {
   const [scrolled, setScrolled] = useState(false);
@@ -17,28 +17,40 @@ export default function Navbar() {
   }, []);
 
   return (
-   <motion.nav 
-   initial={{ y : -100, opacity: 0}}
-   animate={{ y: 0, opacity: 1}} 
-   transition={{duration: 0.7}}
-   className={`fixed top-0 w-full z-50 transition-all duration-500 border-b${
-    scrolled
-        ? " bg-surface/70 backdrop-blur-md border-white/10 shadow-md"
-        : " bg-transparent border-transparent shadow-none"
-    }`}
+    <motion.nav
+      initial={{ y: -100, opacity: 0 }}
+      animate={{ y: 0, opacity: 1 }}
+      transition={{ duration: 0.7 }}
+      className={`fixed top-0 w-full z-50 transition-all duration-500 border-b ${
+        scrolled
+          ? " bg-surface/70 backdrop-blur-md border-white/10 shadow-md"
+          : " bg-transparent border-transparent shadow-none"
+      }`}
     >
-    <div className="container mx-auto px-6 flex justify-between items-center h-20">
-        {/* Logo Uin */}
-        <Link href='/' className="text-2xl font-bold tracking-tighter text-white">
-            Sains<span className="text-primary">Data.</span>
+      <div className="container mx-auto px-6 flex justify-between items-center h-20">
+        
+        {/* 1. Logo Uin (TIDAK BERUBAH) */}
+        <Link href="/" className="text-2xl font-bold tracking-tighter text-white">
+          Sains<span className="text-primary">Data.</span>
         </Link>
-        {/* TOMBOL CTA */}
-        <Link 
-        href="/daftar-pmb"
-        className="hidden md:block px-4 py-2 bg-white/10 hover:bg-primary hover:text-white border border-white/10 rounded-xl text-base font-semibold transition-all">
-            PMB 2026
+
+        {/* 2. TOMBOL CTA (LANGSUNG DITAMPILKAN DI SEMUA LAYAR) */}
+        {/* Saya hapus 'hidden md:block' supaya muncul di HP */}
+        {/* Saya tambahkan responsive sizing biar di HP agak kecil dikit, di Laptop normal */}
+        <Link
+          href="https://pmb.uinsalatiga.ac.id/#jalur-masuk"
+          className="
+            px-3 py-1.5 text-sm          /* Ukuran Mobile (Lebih ringkas) */
+            md:px-4 md:py-2 md:text-base /* Ukuran Desktop (Normal) */
+            bg-white/10 hover:bg-primary hover:text-white 
+            border border-white/10 rounded-xl 
+            font-semibold transition-all
+          "
+        >
+          PMB 2026
         </Link>
-    </div>
-   </motion.nav>
+
+      </div>
+    </motion.nav>
   );
 }

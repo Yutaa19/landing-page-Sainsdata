@@ -14,7 +14,7 @@ export default function Hero() {
 
   return (
     // UBAH: Base background tetap hitam, tapi nuansa ambient-nya nanti biru
-    <section className="relative min-h-screen flex items-center justify-center overflow-hidden pt-20 bg-black">
+    <section className="relative min-h-screen flex items-center justify-center overflow-hidden pt-20 bg-black selection:bg-cyan-500 selection:text-white">
       
       {/* ========================================= */}
       {/* BACKGROUND EFFECTS (DARK BLUE THEME)      */}

@@ -29,12 +29,12 @@ export default function Curriculum() {
   const scroolUkt = () => {
     const element = document.getElementById('biaya-ukt')
     if (element) {
-      element.scrollIntoView({ behavior: 'smooth'})
+      element.scrollIntoView({ behavior: 'smooth' })
     }
   }
   return (
-    <section className="relative py-20 bg-black overflow-hidden">
-      
+    <section className="relative py-20 bg-black overflow-hidden selection:bg-cyan-500 selection:text-white">
+
       <div className="container mx-auto px-6">
 
         <motion.div
@@ -88,8 +88,15 @@ export default function Curriculum() {
               >
 
                 {/* 1. BAGIAN GAMBAR */}
+                {/* 1. BAGIAN GAMBAR */}
                 <div className="w-full lg:w-1/2 relative group">
-                  <div className="relative h-[250px] lg:h-[300px] w-full rounded-2xl overflow-hidden border border-slate-700/50 bg-slate-800 shadow-2xl">
+                      {/* PERBAIKAN:
+          1. Hapus 'h-[250px]' -> Ganti jadi 'aspect-video' (Rasio 16:9).
+            Ini bikin tinggi otomatis menyesuaikan lebar HP, jadi gambar tetap landscape (tidak ke-crop).
+          2. Tambahkan 'lg:aspect-auto' -> Supaya di desktop rasionya bebas.
+          3. Pertahankan 'lg:h-[300px]' -> Supaya desktop tetap pakai tinggi fix sesuai desain awal.
+  */}
+                  <div className="relative w-full aspect-video lg:aspect-auto lg:h-[300px] rounded-2xl overflow-hidden border border-slate-700/50 bg-slate-800 shadow-2xl">
                     <Image
                       src={item.image}
                       alt={item.title}
@@ -97,6 +104,9 @@ export default function Curriculum() {
                       className="object-cover scale-105 transition-transform duration-500"
                     />
                   </div>
+
+
+
 
                   {/* Dekorasi Garis ke Tengah (Hiasan Desktop) */}
                   <div className={`hidden lg:block absolute top-1/2 w-8 h-[2px] bg-blue-500/50 
@@ -124,8 +134,13 @@ export default function Curriculum() {
           })}
 
         </div>
-        <button onClick={scroolUkt} className="
-            group relative z-50
+{/* 1. Wrapper Pembungkus (Wajib ada biar tengah) */}
+<div className="w-full flex justify-center relative z-50">
+    
+    <button 
+        onClick={scroolUkt} 
+        className="
+            group relative
             flex items-center justify-center gap-3
             px-8 py-4
             bg-gradient-to-br from-blue-500 to-blue-700
@@ -133,25 +148,26 @@ export default function Curriculum() {
             text-white text-lg font-bold
             rounded-2xl
             shadow-[0_0_20px_rgba(148,163,184,0.3)] 
-    
-            /* Hover: Shadow melebar dan lebih terang (seperti lampu sorot) */
             hover:shadow-[0_10px_40px_rgba(148,163,184,0.6)]
-                    
-            /* --- BAGIAN PENTING (ANIMASI & CURSOR) --- */
-            cursor-pointer               /* Biar kursor jadi tangan */
-            transition-all               /* Animasikan semua perubahan */
-            duration-300                 /* Durasi 0.3 detik (pas, gak kecepetan/kelambatan) */
-            ease-out                     /* Pelembut: Melambat di akhir (biar gak kaku) */
-            hover:-translate-y-1         /* Efek naik sedikit */
+            
+            cursor-pointer
+            transition-all 
+            duration-300
+            ease-out
+            hover:-translate-y-1
             active:scale-95
-            left-125
-            mt-10              /* Efek 'kepencet' (mengecil dikit pas diklik) */
-        ">
-          {/* BAGIAN IKON */}
-   
+            mt-10
+        "
+    >
+        {/* BAGIAN IKON */}
+        <div className="bg-white rounded-full p-1 group-hover:rotate-45 transition-transform duration-300">
+            <ArrowUpRight className="w-4 h-4 text-blue-600" strokeWidth={3} />
+        </div>
 
-          Gabung Sekarang
-        </button>
+        Gabung Sekarang
+    </button>
+
+</div>
       </div>
       <div className="absolute bottom-0 left-0 w-full h-32 bg-gradient-to-t from-black via-black/50 to-transparent z-10"></div>
       <div className="absolute bottom-0 left-0 w-full h-[1px] bg-gradient-to-r from-transparent via-blue-500 to-transparent z-20 opacity-50"></div>

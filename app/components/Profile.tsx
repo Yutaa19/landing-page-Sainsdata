@@ -238,25 +238,43 @@ export default function Profile() {
                     </div>
 
                     {/* Gambar Kanan (Order 3) */}
+                 {/* Gambar Kanan (Order 3) */}
                     <motion.div
                         initial={{ opacity: 0, x: 50 }}
                         whileInView={{ opacity: 1, x: 0 }}
                         viewport={{ once: true }}
                         transition={{ duration: 0.6, delay: 0.4 }}
-                        className="lg:col-span-5 relative h-auto lg:h-[400px] w-full order-3 mt-8 lg:mt-0 -left-50"
+                        
+                        className="
+                            lg:col-span-5 
+                            relative 
+                            h-auto lg:h-[400px] 
+                            w-full 
+                            order-3 
+                            mt-8 lg:mt-0 
+                            
+                            /* --- SOLUSINYA DI SINI --- */
+                            left-0              /* Di HP: Posisi Normal (0) biar gak kepotong */
+                            lg:-left-[200px]     /* Di Laptop: Geser ke kiri 50px biar rapi */
+                        "
                     >
                         <div className="flex flex-col gap-4 lg:block">
+                            
                             {/* 1. Loop Gambar Latar */}
                             {section3Images.map((img, idx) => (
-                                <div key={idx} className={`${img.className} bg-slate-800 rounded-xl shadow-2xl overflow-hidden border-2 border-slate-700/50`}>
+                                <div 
+                                    key={idx} 
+                                    className={`${img.className} bg-slate-800 rounded-xl shadow-2xl overflow-hidden border-2 border-slate-700/50`}
+                                >
                                     <Image src={img.src} alt={img.alt} fill className="object-cover opacity-80 lg:scale-110" />
                                 </div>
                             ))}
 
-                            {/* 2. Gambar Logo UIN (Spesial) */}
+                            {/* 2. Gambar Logo UIN */}
                             <div className="relative w-32 h-32 mx-auto lg:absolute lg:top-27 lg:left-77 lg:w-55 lg:h-35 z-50 mt-4 lg:mt-0">
                                 <Image src="/images/logo_uin.png" alt="Logo UIN" fill className="object-contain lg:scale-110" />
                             </div>
+                            
                         </div>
                     </motion.div>
                 </div>

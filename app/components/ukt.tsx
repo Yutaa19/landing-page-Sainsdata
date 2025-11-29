@@ -1,8 +1,7 @@
 "use client";
 import Link from "next/link";
-import { motion } from "framer-motion";
-import { useState } from "react"; // Tambah ini
-import { Check, ArrowRight, Wallet, Calculator } from "lucide-react"; // Tambah Calculator
+import { motion } from "framer-motion";// Tambah ini
+import { Check, ArrowRight } from "lucide-react"; // Tambah Calculator
 
 export default function TuitionFee() {
     // Data Benefit UKT
@@ -77,7 +76,7 @@ export default function TuitionFee() {
 
                    
                             {/* Tombol CTA */}
-                            <Link href="/daftar-pmb" className="
+                            <Link href="https://pmb.uinsalatiga.ac.id/#jalur-masuk" className="
                         w-full group relative cursor-pointer
                         flex items-center justify-center gap-3
                         px-8 py-4

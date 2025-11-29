@@ -5,7 +5,7 @@ import { motion } from 'framer-motion';
 
 export default function Events() {
     return(
-        <section className='relative min-h screen flex items-center justify-center overflow-hidden pt-20 bg-black py-20'>
+        <section className='relative min-h screen flex items-center justify-center overflow-hidden pt-20 bg-black py-20 selection:bg-cyan-500 selection:text-white'>
             <div className='container mx-auto px-6 z-10 relative'>
             <motion.div 
             initial={{ opacity: 0, y: 50 }}
