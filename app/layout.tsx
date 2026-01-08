@@ -6,6 +6,7 @@ import './globals.css';
 const Jakarta = Plus_Jakarta_Sans({
     subsets: ['latin'],
     variable: '--font-jakarta',
+    display: 'swap',
 })
 
 export const metadata: Metadata = {
