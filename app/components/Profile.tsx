@@ -4,11 +4,6 @@ import { motion } from 'framer-motion'
 import { Check } from 'lucide-react'
 
 export default function Profile() {
-    
-    // === DATA GAMBAR DENGAN RESPONSIVE CLASS ===
-    // LOGIKA: 
-    // 1. Mobile: 'relative w-full translate-x-0' (Tumpuk Rapi)
-    // 2. Desktop (lg): 'lg:absolute lg:top-...' (Pakai nilai aslimu)
 
     const section1Images = [
         { 
@@ -86,9 +81,8 @@ export default function Profile() {
                     Kenapa Harus Pilih Sains Data UIN Salatiga?
                 </motion.h1>
 
-                {/* ========================================== */}
+                
                 {/* SECTION 1: Teks Kiri + Timeline + Gambar Kanan */}
-                {/* ========================================== */}
                 <div className='grid grid-cols-1 lg:grid-cols-12 gap-8 items-center mb-20 lg:mb-40'>
 
                     {/* Teks Kiri (Order 1 di Mobile) */}

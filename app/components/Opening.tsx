@@ -1,13 +1,15 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { ArrowUpRight, Database, BrainCircuit } from "lucide-react";
-import { YouTubeEmbed } from '@next/third-parties/google'
+import { ArrowUpRight, Database, BrainCircuit} from "lucide-react";
+import { IoLogoYoutube } from 'react-icons/io'
+import Image from "next/image";
 import { useState, useEffect } from "react";
 
 export default function Hero() {
   // Tunda load komponen berat sampai interaksi atau setelah mount
   const [isMounted, setIsMounted] = useState(false);
+  const [showVideo, setShowVideo] = useState(false);
 
   useEffect(() => {
     setIsMounted(true);
@@ -29,14 +31,14 @@ export default function Hero() {
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
         {/* Glow Biru Tua - Menggunakan Radial Gradient, bukan Blur Filter */}
         <div className="absolute top-[-10%] left-1/2 -translate-x-1/2 w-[80vw] h-[50vh] bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-blue-900/40 via-black to-black opacity-70"></div>
-        
+
         {/* Glow Cyan - Lebih ringan */}
         <div className="absolute top-[10%] left-1/2 -translate-x-1/2 w-[40vw] h-[30vh] bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-cyan-600/20 via-transparent to-transparent"></div>
       </div>
 
       <div className="container mx-auto px-6 text-center z-10 relative">
 
-        {/* Kurangi animasi kompleks pada load awal */}
+        {/*  animasi */}
         <motion.div
           initial={{ opacity: 0, y: 10 }}
           animate={{ opacity: 1, y: 0 }}
@@ -60,17 +62,50 @@ export default function Hero() {
            Video Youtube seringkali memblokir main thread. 
            Pastikan container video memiliki aspect ratio statis untuk mencegah Layout Shift.
         */}
+        {/* VIDEO SECTION YANG SUDAH DIPERBAIKI */}
         <div className="relative z-10 mx-auto max-w-4xl mt-10 mb-10">
-            <div className="aspect-video w-full rounded-xl overflow-hidden shadow-2xl shadow-blue-900/20 border border-white/10 bg-slate-900">
-               {/* Tips: Lite YouTube Embed jauh lebih cepat. 
-                   Jika menggunakan component standard, pastikan tidak autoload. */}
-               <YouTubeEmbed
-                videoid="s5Ef7ZCiDNs"
-                params="controls=1&rel=0&playsinline=1&modestbranding=1"
-                playlabel="Sains Data UIN Salatiga Video"
-                style="border-radius: 12px;" 
-              />
-            </div>
+          {/* Container Pembungkus Utama dengan Aspect Ratio Terkunci */}
+          <div className="relative w-full aspect-video rounded-xl overflow-hidden shadow-2xl shadow-blue-900/20 border border-white/10 bg-slate-900 group">
+
+            {/* KONDISI 1: Belum diklik (Tampilkan Thumbnail) */}
+            {!showVideo ? (
+              <div
+                className="absolute inset-0 w-full h-full flex items-center justify-center cursor-pointer"
+                onClick={() => setShowVideo(true)}
+              >
+                {/* GAMBAR BACKGROUND: Gunakan 'fill' agar otomatis mengikuti ukuran kotak */}
+                <Image
+                  src="/images/thumbnail_uin.png"
+                  alt="Video Thumbnail"
+                  fill
+                  className="object-cover opacity-100 transition-transform duration-700 group-hover:scale-105"
+                  priority
+                  sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                />
+
+                {/* Overlay Hitam Transparan (Supaya teks terbaca) */}
+                <div className="absolute inset-0 bg-black/20 group-hover:bg-black/10 transition-colors"></div>
+
+                {/* Tombol Play */}
+                <div className="relative z-10 flex flex-col items-center gap-3">
+                  <div className="w-16 h-16 md:w-20 md:h-20 bg-blue-600/90 rounded-full flex items-center justify-center pl-1 shadow-[0_0_30px_rgba(37,99,235,0.5)] group-hover:scale-110 transition-transform duration-300">
+                    <IoLogoYoutube className="w-6 h-6 md:w-8 md:h-8 text-white fill-current" />
+                  </div>
+                </div>
+              </div>
+            ) : (
+              /* KONDISI 2: Sudah diklik (Tampilkan Iframe) */
+              /* Gunakan 'absolute inset-0' agar iframe terkunci rapat di dalam kotak */
+              <iframe
+                className="absolute top-0 left-0 w-full h-full"
+                src="https://www.youtube.com/embed/s5Ef7ZCiDNs?autoplay=1&rel=0&modestbranding=1"
+                title="Sains Data UIN Salatiga Video"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowFullScreen
+                loading="lazy"
+              ></iframe>
+            )}
+          </div>
         </div>
 
         <p className="text-lg md:text-xl text-slate-400 max-w-2xl mx-auto mb-10">
@@ -107,7 +142,7 @@ export default function Hero() {
           </>
         )}
       </div>
-      
+
       {/* Footer Gradient Static - CSS Only */}
       <div className="absolute bottom-0 left-0 w-full h-32 bg-gradient-to-t from-black via-black/50 to-transparent z-10 pointer-events-none"></div>
     </section>
