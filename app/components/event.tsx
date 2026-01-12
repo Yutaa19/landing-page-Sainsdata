@@ -3,7 +3,7 @@
 import Image from 'next/image';
 import { motion } from 'framer-motion';
 
-export default function Events() {
+const Events = () => {
     return(
         <section className='relative min-h screen flex items-center justify-center overflow-hidden pt-20 bg-black py-20 selection:bg-cyan-500 selection:text-white'>
             <div className='container mx-auto px-6 z-10 relative'>
@@ -112,3 +112,5 @@ export default function Events() {
         </section>
     )
 }
+
+export default Events

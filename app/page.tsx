@@ -9,7 +9,9 @@ const LoadingFallback = () => <div className="py-20 bg-black min-h-[50vh] animat
 // Component di bawah fold (tidak terlihat saat pertama load)
 const Profile = dynamic(() => import("@/app/components/Profile"), { loading: () => <LoadingFallback /> });
 const Kurikulum = dynamic(() => import("@/app/components/kurikulum"), { loading: () => <LoadingFallback /> });
+const Akreditasi = dynamic(() => import("@/app/components/akreditasi"))
 const Events = dynamic(() => import('@/app/components/event'));
+const PekanIlmiah = dynamic(() => import('@/app/components/pekanilmiah'))
 const ExclusiveWebinar = dynamic(() => import('@/app/components/webinar'));
 const TuitionFee = dynamic(() => import("@/app/components/ukt"));
 const FAQ = dynamic(() => import("@/app/components/Faq"));
@@ -26,6 +28,8 @@ export default function Home() {
       <div className="flex flex-col gap-0">
         <Profile />
         <Kurikulum />
+        <Akreditasi />
+        <PekanIlmiah />
         <Events />
         <ExclusiveWebinar />
         <TuitionFee />

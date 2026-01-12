@@ -3,7 +3,7 @@ import Link from "next/link";
 import { motion } from "framer-motion";// Tambah ini
 import { Check, ArrowRight } from "lucide-react"; // Tambah Calculator
 
-export default function TuitionFee() {
+const TuitionFee = () => {
     // Data Benefit UKT
     const benefits = [
         { title: "Golongan Pertama I", desc: "0 - 400,000" },
@@ -12,8 +12,8 @@ export default function TuitionFee() {
         { title: "Golongan Keempat IV", desc: "4,000,000" },
         { title: "Golongan Kelima V", desc: "4,500,000" },
         { title: "Golongan Keenam VI", desc: "5,000,000" },
-        { title: "Golongan Keenam VII", desc: "5,500,000" },
-        { title: "Golongan Keenam VIII(KIP)", desc: "2,400,000" },
+        { title: "Golongan Ketujuh VII", desc: "5,500,000" },
+        { title: "Golongan Beasiswa(KIP)", desc: "2,400,000" },
     ];
 
     // --- STATE UNTUK KALKULATOR ---
@@ -34,9 +34,7 @@ export default function TuitionFee() {
                             Terjangkau Se-Indonesia
                         </span>
                     </h2>
-                    <p className="text-slate-400 text-lg">
-                        Investasi leher ke atas terbaik dengan harga yang masuk akal.
-                    </p>
+
                 </div>
 
                 {/* === PRICING CARD WRAPPER === */}
@@ -57,7 +55,7 @@ export default function TuitionFee() {
 
                         <div className="relative z-10">
                             <h3 className="text-3xl font-bold text-white mb-2">DI Mulai Dengan Harga UKT Golongan Pertama</h3>
-                           
+
 
                             {/* Harga Coret (Perbandingan Kampus Swasta/Lain) */}
                             <div className="flex items-center gap-3 mb-1">
@@ -69,12 +67,12 @@ export default function TuitionFee() {
                             <h2 className="text-5xl md:text-6xl font-black text-white mb-2 tracking-tight">
                                 Rp 400.000
                             </h2>
-                             <p className="text-slate-300 mb-6">Biaya per Semester (6 Bulan)</p>
+                            <p className="text-slate-300 mb-6">Biaya per Semester (6 Bulan)</p>
                             <p className="text-blue-300 font-medium mb-8">
                                 Hanya ± Rp 2.300 / hari Lebih murah di bandingkan kuota scrolling media sosial seharian
                             </p>
 
-                   
+
                             {/* Tombol CTA */}
                             <Link href="https://pmb.uinsalatiga.ac.id/#jalur-masuk" className="
                         w-full group relative cursor-pointer
@@ -96,10 +94,10 @@ export default function TuitionFee() {
                             <p className="text-xs text-slate-500 mt-4 text-center">
                                 *Nominal UKT disesuaikan dengan kemampuan ekonomi orang tua (Grade 1 - 7).
                             </p>
-                           
-              
+
+
                         </div>
-                        
+
                     </div>
 
 
@@ -115,46 +113,44 @@ export default function TuitionFee() {
                                 Kuliah (UKT)
                             </span>
                         </h4>
-                       {/* GANTI 'space-y-6' MENJADI GRID */}
-<div className="grid grid-cols-1 md:grid-cols-2 gap-x-12 gap-y-10">
-    
-    {benefits.map((benefit, index) => (
-        <motion.div
-            key={index}
-            initial={{ opacity: 0, x: 20 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true }}
-            transition={{ delay: index * 0.1 }}
-            className="flex items-start gap-4"
-        >
-            {/* Ikon Centang Biru */}
-            <div className="flex-shrink-0 mt-2"> {/* mt-2 biar pas sama teks besar */}
-                <div className="w-8 h-8 rounded-full bg-blue-600 flex items-center justify-center shadow-[0_0_15px_rgba(37,99,235,0.5)]">
-                    <Check className="w-5 h-5 text-white" strokeWidth={3} />
-                </div>
-            </div>
+                        {/* GANTI 'space-y-6' MENJADI GRID */}
+                        <div className="grid grid-cols-1 md:grid-cols-2 gap-x-12 gap-y-10">
 
-            {/* Teks Benefit */}
-            <div>
-                {/* JUDUL */}
-                <h5 className="text-white font-bold text-2xl leading-tight mb-2">
-                    {benefit.title}
-                </h5>
+                            {benefits.map((benefit, index) => (
+                                <motion.div
+                                    key={index}
+                                    initial={{ opacity: 0, x: 20 }}
+                                    whileInView={{ opacity: 1, x: 0 }}
+                                    viewport={{ once: true }}
+                                    transition={{ delay: index * 0.1 }}
+                                    className="flex items-start gap-4"
+                                >
+                                    {/* Ikon Centang Biru */}
+                                    <div className="flex-shrink-0 mt-2"> {/* mt-2 biar pas sama teks besar */}
+                                        <div className="w-8 h-8 rounded-full bg-blue-600 flex items-center justify-center shadow-[0_0_15px_rgba(37,99,235,0.5)]">
+                                            <Check className="w-5 h-5 text-white" strokeWidth={3} />
+                                        </div>
+                                    </div>
 
-                {/* DESKRIPSI */}
-                <p className="text-slate-300 text-lg font-medium leading-relaxed">
-                    {benefit.desc}
-                </p>
-            </div>
-        </motion.div>
-    ))}
-</div>
+                                    {/* Teks Benefit */}
+                                    <div>
+                                        {/* JUDUL */}
+                                        <h5 className="text-white font-bold text-2xl leading-tight mb-2">
+                                            {benefit.title}
+                                        </h5>
+
+                                        {/* DESKRIPSI */}
+                                        <p className="text-slate-300 text-lg font-medium leading-relaxed">
+                                            {benefit.desc}
+                                        </p>
+                                    </div>
+                                </motion.div>
+                            ))}
+                        </div>
 
                         {/* Footer Kanan */}
                         <div className="mt-10 pt-8 border-t border-slate-800">
-                            <p className="text-slate-400 text-sm">
-                                Masih ragu? Konsultasikan biaya kuliahmu dengan admin kami. <span className="text-blue-400 cursor-pointer hover:underline">Hubungi Admin</span>
-                            </p>
+
                         </div>
                     </div>
 
@@ -164,3 +160,5 @@ export default function TuitionFee() {
         </section>
     );
 }
+
+export default TuitionFee

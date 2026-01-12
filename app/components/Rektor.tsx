@@ -2,9 +2,8 @@
 
 import Image from "next/image";
 import { motion } from "framer-motion";
-import { Quote } from "lucide-react";
 
-export default function RectorQuote() {
+const RectorQuote = () => {
   return (
     <section className="py-24 bg-black overflow-hidden">
       <div className="container mx-auto px-6 relative">
@@ -103,3 +102,5 @@ export default function RectorQuote() {
     </section>
   );
 }
+
+export default RectorQuote

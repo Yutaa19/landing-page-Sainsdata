@@ -1,283 +1,130 @@
-"use client"
-import Image from 'next/image'
-import { motion } from 'framer-motion'
-import { Check } from 'lucide-react'
+"use client";
 
-export default function Profile() {
+import { motion } from "framer-motion";
+import Image from "next/image";
+import { ArrowUpRight } from "lucide-react";
 
-    const section1Images = [
-        { 
-            src: "/images/machine-learning.png", 
-            alt: "Machine Learning", 
-            // Mobile: relative, margin-bawah. Desktop: absolute, top-12, left-20 (Sesuai request)
-            className: "relative w-full h-48 mb-4 lg:mb-0 lg:absolute lg:top-12 lg:left-20 lg:w-70 lg:h-40 z-30" 
-        },
-        { 
-            src: "/images/deep-learning.png", 
-            alt: "Deep Learning", 
-            className: "relative w-full h-48 mb-4 lg:mb-0 lg:absolute lg:top-55 lg:left-55 lg:w-70 lg:h-40 z-20" 
-        },
-        { 
-            src: "/images/cloud-computing.png", 
-            alt: "Cloud Computing", 
-            className: "relative w-full h-48 lg:mb-0 lg:absolute lg:top-55 lg:-left-18 lg:w-70 lg:h-40 z-10" 
-        }
-    ]
+// Data Karir (Pastikan file gambar sudah ada di public/images/)
+const careers = [
+  {
+    title: "Data Engineer",
+    image: "/images/data_enginerr.png",
+    description: "Profesional yang yang bertanggung jawab untuk merancang, mengembangkan, dan memelihara arsitektur manajemen data baik berupa database, datawarehouse, maupun sistem pemrosesan data berskala besar.",
+    // Gradient Background Khusus per Card (opsional, atau bisa diseragamkan)
+    bgGradient: "from-blue-900 to-slate-900", 
+    border: "hover:border-blue-400"
+  },
+  {
+    title: "Data Analyst",
+    image: "/images/p_data_analyst.png",
+    description: "Profesional yang bertanggung jawab untuk mengumpulkan, mengelola, dan menganalisis data untuk memberikan wawasan yang berguna kepada perusahaan atau organisasi dengan tugas analisis eksploratif data, pembuatan model statistik, penggunaan algoritma pembelajaran mesin, pengujian hipotesis, dan visualisasi data yang dapat digunakan untuk pengambilan keputusan untuk menyelesaikan permasalahan di berbagai bidang industri.",
+    bgGradient: "from-cyan-900 to-slate-900",
+    border: "hover:border-cyan-400"
+  },
+  {
+    title: "Data Scientist",
+    image: "/images/data_scientist.png",
+    description: "Profesional yang memiliki pemahaman yang mendalam tentang teori statistik, matematika, dan ilmu komputer, serta mampu menerapkan pengetahuan tersebut untuk mengekstraksi wawasan dari data dengan tugas mengembangkan model prediktif, melakukan analisis statistik, dan mengimplementasikan teknik machine learning untuk memahami data yang kompleks untuk menyelesaikan permasalahan di berbagai bidang industri.",
+    bgGradient: "from-indigo-900 to-slate-900",
+    border: "hover:border-indigo-400"
+  },
+  {
+    title: "Web Developer",
+    image: "/images/web_developer.png",
+    description: "Profesional yang fokus pada pembangunan dan pemeliharaan infrastruktur data yang kokoh dan skalabel serta bertanggung jawab untuk merancang dan membangun sistem penyimpanan data, mengelola aliran data dari berbagai sumber, memastikan keamanan dan integritas data, serta membangun pipeline data yang efisien.",
+    bgGradient: "from-sky-900 to-slate-900",
+    border: "hover:border-sky-400"
+  }
+];
 
-    const section2Images = [
-        { 
-            src: "/images/programing.png", 
-            alt: "Programming", 
-            className: "relative w-full h-48 mb-4 lg:mb-0 lg:absolute lg:-top-20 lg:-right-15 lg:w-64 lg:h-40 z-30" 
-        },
-        { 
-            src: "/images/lab_kom.png", 
-            alt: "Lab Komputer", 
-            className: "relative w-full h-48 mb-4 lg:mb-0 lg:absolute lg:-top-20 lg:right-50 lg:w-64 lg:h-40 z-20" 
-        },
-        { 
-            src: "/images/dosen.png", 
-            alt: "Dosen", 
-            className: "relative w-full h-48 lg:mb-0 lg:absolute lg:top-22 lg:right-20 lg:w-64 lg:h-40 z-10" 
-        }
-    ]
+const Career = () => {
+  return (
+    <section className="py-24 bg-black relative overflow-hidden">
+      
+      {/* Background Ambient Glow (Biru Luas) */}
+      <div className="absolute top-0 inset-x-0 h-[500px] bg-blue-900/20 blur-[150px] -z-10 pointer-events-none"></div>
 
-    const section3Images = [
-        { 
-            src: "/images/sd1.jpg", 
-            alt: "Machine Learning", 
-            className: "relative w-full h-48 mb-4 lg:mb-0 lg:absolute lg:top-12 lg:left-110 lg:w-55 lg:h-35 z-30" 
-        },
-        { 
-            src: "/images/sd2jpg.jpg", 
-            alt: "Deep Learning", 
-            className: "relative w-full h-48 mb-4 lg:mb-0 lg:absolute lg:top-55 lg:left-110 lg:w-55 lg:h-35 z-20" 
-        },
-        { 
-            src: "/images/sd3.jpg", 
-            alt: "Cloud Computing", 
-            className: "relative w-full h-48 mb-4 lg:mb-0 lg:absolute lg:top-55 lg:left-45 lg:w-55 lg:h-35 z-10" 
-        },
-        { 
-            src: "/images/sd4.jpg", 
-            alt: "Machine Learning", 
-            className: "relative w-full h-48 lg:mb-0 lg:absolute lg:top-12 lg:left-45 lg:w-55 lg:h-35 z-30" 
-        }
-    ]
+      <div className="container mx-auto px-6 relative z-10">
+        
+        {/* HEADER */}
+        <div className="text-center mb-24 max-w-3xl mx-auto">
+          <motion.h2 
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="text-3xl md:text-5xl font-bold text-white mb-6 leading-tight"
+          >
+            Peluang Karir <br />
+            <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 via-cyan-400 to-blue-400">
+              Program Studi Sains Data
+            </span>
+          </motion.h2>
+          <p className="text-slate-400 text-lg">
+            Pilih jalur karir masa depanmu dengan skill teknologi terkini.
+          </p>
+        </div>
 
-    return (
-        <section className='relative min-h-screen flex items-center justify-center overflow-hidden pt-20 bg-black py-20'>
-            
-            <div className='container mx-auto px-6 z-10 relative'>
-                
-                {/* Judul */}
-                <motion.h1
-                    initial={{ opacity: 0, y: -50 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    viewport={{ once: true }}
-                    transition={{ duration: 0.8, delay: 0.2 }}
-                    className='text-3xl md:text-5xl font-bold tracking-tight leading-tight mb-16 text-center'
-                >
-                    Kenapa Harus Pilih Sains Data UIN Salatiga?
-                </motion.h1>
+        {/* GRID CARDS */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-y-20 gap-x-6"> {/* gap-y-20 diperbesar agar gambar tidak tabrakan */}
+          {careers.map((item, index) => (
+            <motion.div
+              key={index}
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: index * 0.1 }}
+              // STYLE CARD UTAMA:
+              className={`
+                  group relative 
+                  bg-gradient-to-b ${item.bgGradient} /* Background Gradient Biru */
+                  border border-white/10 ${item.border}
+                  p-6 pt-0 /* pt-0 karena gambar akan naik ke atas */
+                  rounded-3xl 
+                  overflow-visible /* WAJIB: Agar gambar bisa keluar */
+                  transition-all duration-300 
+                  hover:-translate-y-2 hover:shadow-2xl hover:shadow-blue-900/20
+              `}
+            >
+              
+              {/* AREA GAMBAR (POP-OUT STATIC) */}
+              <div className="relative w-full h-56 -mt-16 mb-4 flex items-center justify-center z-20">
+                  <div className="relative w-[100%] h-[100%]"> {/* Size Gambar Diperbesar 150% */}
+                      <Image 
+                          src={item.image}
+                          alt={item.title}
+                          fill
+                          priority={index < 2}
+                          className="
+                              object-contain 
+                              drop-shadow-[0_15px_30px_rgba(0,0,0,0.6)] /* Shadow Tebal */
+                              transition-transform duration-500
+                          "
+                          sizes="(max-width: 768px) 100vw, 33vw"
+                      />
+                  </div>
+              </div>
 
-                
-                {/* SECTION 1: Teks Kiri + Timeline + Gambar Kanan */}
-                <div className='grid grid-cols-1 lg:grid-cols-12 gap-8 items-center mb-20 lg:mb-40'>
+              {/* TEXT CONTENT */}
+              <div className="relative z-10 mt-2">
+                <h3 className="text-2xl font-bold text-white mb-3 group-hover:text-blue-300 transition-colors">
+                    {item.title}
+                </h3>
+                <p className="text-blue-100/70 text-sm leading-relaxed mb-6 min-h-[60px]">
+                    {item.description}
+                </p>
 
-                    {/* Teks Kiri (Order 1 di Mobile) */}
-                    <motion.div
-                        initial={{ opacity: 0, x: -50 }}
-                        whileInView={{ opacity: 1, x: 0 }}
-                        viewport={{ once: true }}
-                        transition={{ duration: 0.6, delay: 0.4 }}
-                        className='lg:col-span-5 text-lg text-slate-300 leading-relaxed space-y-6 text-left order-1'
-                    >
-                        <div className='text-left max-w-2xl'>
-                            <p className='text-xl md:text-2xl font-medium leading-snug text-slate-300'>
-                                <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 via-cryn-400 to-teal-400 font-bold">
-                                    Kalian akan dibimbing dari Nol sampai bisa mahir
-                                </span>{' '}
-                                mengolah data menjadi wawasan berharga dengan kurikulum berbasis proyek nyata dalam{' '}
-                                <span className="font-bold text-cyan-400 decoration-cyan-400/30 underline decoration-2 underline-offset-4">
-                                    100+ SKS Praktikum Intensif
-                                </span>{' '}
-                                yang bisa diakses ketika menjadi Mahasiswa aktif Sains Data UIN Salatiga. Karena Sains Data adalah ilmu yang dibutuhkan dalam perkembangan AI saat ini.
-                                <br className="block my-6" />
-                                Mata Kuliah Kurikulum pembelajaran disusun oleh para{' '}
-                                <span className="font-bold text-cyan-400 decoration-cyan-400/30 underline decoration-2 underline-offset-4">
-                                    Praktisi Industri & Dosen Bergelar PhD
-                                </span>{' '}
-                                untuk memastikan skill kalian relevan dengan kebutuhan pasar global.
-                            </p>
-                        </div>
-                    </motion.div>
+              </div>
 
-                    {/* Timeline Divider (Hidden di Mobile) */}
-                    <div className="hidden lg:flex lg:col-span-2 justify-center relative h-[400px] order-2">
-                        <div className="h-full w-1 bg-white/80 absolute top-0"></div>
-                        <div className="absolute top-0 z-10 w-12 h-12 bg-blue-500 rounded-full flex items-center justify-center border-4 border-white/60">
-                            <Check className="w-7 h-7 text-white" strokeWidth={3} />
-                        </div>
-                        <div className="absolute -bottom-25 z-10 w-12 h-12 bg-blue-500 rounded-full flex items-center justify-center border-4 border-white/60">
-                            <Check className="w-7 h-7 text-white" strokeWidth={3} />
-                        </div>
-                    </div>
+            </motion.div>
+          ))}
+        </div>
 
-                    {/* Gambar Kanan (Order 3 di Mobile, h-auto biar ga kepotong) */}
-                    <motion.div
-                        initial={{ opacity: 0, x: 50 }}
-                        whileInView={{ opacity: 1, x: 0 }}
-                        viewport={{ once: true }}
-                        transition={{ duration: 0.6, delay: 0.4 }}
-                        className="lg:col-span-5 relative h-auto lg:h-[400px] w-full order-3 mt-8 lg:mt-0"
-                    >
-                        {/* Container Wrapper Mobile */}
-                        <div className="flex flex-col gap-4 lg:block">
-                            {section1Images.map((img, idx) => (
-                                <div key={idx} className={`${img.className} bg-slate-800 rounded-xl shadow-2xl overflow-hidden border-2 border-slate-700/500`}>
-                                    <Image src={img.src} alt={img.alt} fill className="object-cover opacity-80 lg:scale-110" />
-                                </div>
-                            ))}
-                        </div>
-                    </motion.div>
-                </div>
-
-                {/* ========================================== */}
-                {/* SECTION 2: Gambar Kiri + Timeline + Teks Kanan */}
-                {/* ========================================== */}
-                <div className='grid grid-cols-1 lg:grid-cols-12 gap-8 items-center'>
-
-                    {/* Gambar Kiri (Order 2 di Mobile -> Pindah Bawah Teks) */}
-                    <motion.div
-                        initial={{ opacity: 0, x: -50 }}
-                        whileInView={{ opacity: 1, x: 0 }}
-                        viewport={{ once: true }}
-                        transition={{ duration: 0.6, delay: 0.4 }}
-                        className="lg:col-span-5 relative h-auto lg:h-[400px] w-full order-2 lg:order-1 mt-8 lg:mt-0"
-                    >
-                         <div className="flex flex-col gap-4 lg:block">
-                            {section2Images.map((img, idx) => (
-                                <div key={idx} className={`${img.className} bg-slate-800 rounded-xl shadow-2xl overflow-hidden border-2 border-slate-700/50`}>
-                                    <Image src={img.src} alt={img.alt} fill className="object-cover opacity-80" />
-                                </div>
-                            ))}
-                        </div>
-                    </motion.div>
-
-                    {/* Timeline Divider */}
-                    <div className="hidden lg:flex lg:col-span-2 justify-center relative h-[500px] order-2">
-                        <div className="h-full w-1 bg-white/80 absolute -top-40"></div>
-                        <div className="absolute top-80 -translate-y-1/2 z-10 w-12 h-12 bg-blue-500 rounded-full flex items-center justify-center border-4 border-white/60">
-                            <Check className="w-7 h-7 text-white" strokeWidth={3} />
-                        </div>
-                    </div>
-
-                    {/* Teks Kanan (Order 1 di Mobile) */}
-                    <motion.div
-                        initial={{ opacity: 0, x: 50 }}
-                        whileInView={{ opacity: 1, x: 0 }}
-                        viewport={{ once: true }}
-                        transition={{ duration: 0.6, delay: 0.4 }}
-                        // Di Mobile Margin Top dihapus, Di Laptop pakai -mt-85
-                        className='lg:col-span-5 text-lg text-slate-300 leading-relaxed space-y-6 text-left lg:-mt-85 order-1 lg:order-3'
-                    >
-                        <div className='text-left max-w-2xl'>
-                            <p className='text-xl md:text-2xl font-medium leading-snug text-slate-300'>
-                                Dapatkan akses eksklusif ke kurikulum dinamis di mana kalian bisa{' '}
-                                <span className="text-blue-400 font-semibold">
-                                    mendapatkan materi AI & Data Science
-                                </span>{' '}
-                                yang jarang diajarkan di kampus konvensional. Kami pastikan kalian menguasai{' '}
-                                <span className="text-blue-400 font-semibold">
-                                    pemanfaatan AI
-                                </span>{' '}
-                                dengan tepat guna. Semua materi disampaikan dalam Kelas Kuliah oleh para ahli—gabungan dosen peneliti dan praktisi lapangan—yang berpengalaman mendeploy model Machine Learning untuk solusi dunia nyata.
-                            </p>
-                        </div>
-                    </motion.div>
-                </div>
-
-                {/* ========================================== */}
-                {/* SECTION 3: Teks Kiri + Timeline + Gambar Kanan */}
-                {/* ========================================== */}
-                <div className='grid grid-cols-1 lg:grid-cols-12 gap-8 items-center mt-20 lg:-mt-55'>
-                    
-                    {/* Teks Kiri (Order 1) */}
-                    <motion.div
-                        initial={{ opacity: 0, x: -50 }}
-                        whileInView={{ opacity: 1, x: 0 }}
-                        viewport={{ once: true }}
-                        transition={{ duration: 0.6, delay: 0.4 }}
-                        className='lg:col-span-5 text-lg text-slate-300 leading-relaxed space-y-6 text-left order-1'
-                    >
-                        <p className='text-xl md:text-2xl font-medium leading-snug text-slate-300'>
-                            <span className="block font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-blue-500 via-cryn-500 to-teal-500">
-                                Akses Eksklusif Pekan Ilmiah.
-                            </span> Ini bukan kuliah umum biasa. Tiap minggu, kalian akan masuk ke{' '}
-                            <span className="font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-blue-400 via-cyan-400 to-teal-300">
-                                circle khusus mahasiswa Sains Data
-                            </span>{' '}buat mengasah skill kalian sampai advanced.{' '}
-                            Kita hadirkan praktisi industri asli. Kalian bisa networking, gali ilmunya lewat{' '}
-                            <span className="text-white font-bold decoration-cyan-400 underline decoration-2 underline-offset-4">
-                                Live QnA
-                            </span>,
-                            dan dapatkan insight langsung dari mereka.
-                        </p>
-                    </motion.div>
-
-                    {/* Timeline Divider (Hidden Mobile) */}
-                    <div className="hidden lg:flex lg:col-span-2 justify-center relative h-[400px] order-2">
-                         {/* Bisa ditambah garis manual jika mau */}
-                    </div>
-
-                    {/* Gambar Kanan (Order 3) */}
-                 {/* Gambar Kanan (Order 3) */}
-                    <motion.div
-                        initial={{ opacity: 0, x: 50 }}
-                        whileInView={{ opacity: 1, x: 0 }}
-                        viewport={{ once: true }}
-                        transition={{ duration: 0.6, delay: 0.4 }}
-                        
-                        className="
-                            lg:col-span-5 
-                            relative 
-                            h-auto lg:h-[400px] 
-                            w-full 
-                            order-3 
-                            mt-8 lg:mt-0 
-                            
-                            /* --- SOLUSINYA DI SINI --- */
-                            left-0              /* Di HP: Posisi Normal (0) biar gak kepotong */
-                            lg:-left-[200px]     /* Di Laptop: Geser ke kiri 50px biar rapi */
-                        "
-                    >
-                        <div className="flex flex-col gap-4 lg:block">
-                            
-                            {/* 1. Loop Gambar Latar */}
-                            {section3Images.map((img, idx) => (
-                                <div 
-                                    key={idx} 
-                                    className={`${img.className} bg-slate-800 rounded-xl shadow-2xl overflow-hidden border-2 border-slate-700/50`}
-                                >
-                                    <Image src={img.src} alt={img.alt} fill className="object-cover opacity-80 lg:scale-110" />
-                                </div>
-                            ))}
-
-                            {/* 2. Gambar Logo UIN */}
-                            <div className="relative w-32 h-32 mx-auto lg:absolute lg:top-27 lg:left-77 lg:w-55 lg:h-35 z-50 mt-4 lg:mt-0">
-                                <Image src="/images/logo_uin.png" alt="Logo UIN" fill className="object-contain lg:scale-110" />
-                            </div>
-                            
-                        </div>
-                    </motion.div>
-                </div>
-
-            </div>
-
-            <div className="absolute bottom-0 left-0 w-full h-32 bg-gradient-to-t from-black via-black/50 to-transparent z-10"></div>
-            <div className="absolute bottom-0 left-0 w-full h-[1px] bg-gradient-to-r from-transparent via-blue-500 to-transparent z-20 opacity-50"></div>
-            <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-1/2 h-[2px] bg-blue-500 blur-sm z-20"></div>
-        </section>
-    )
+      </div>
+      <div className="absolute bottom-0 left-0 w-full h-32 bg-gradient-to-t from-black via-black/50 to-transparent z-10"></div>
+      <div className="absolute bottom-0 left-0 w-full h-[1px] bg-gradient-to-r from-transparent via-blue-500 to-transparent z-20 opacity-50"></div>
+      <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-1/2 h-[2px] bg-blue-500 blur-sm z-20"></div>
+    </section>
+  );
 }
+
+export default Career

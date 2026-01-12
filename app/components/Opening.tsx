@@ -1,15 +1,17 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { ArrowUpRight, Database, BrainCircuit} from "lucide-react";
-import { IoLogoYoutube } from 'react-icons/io'
+import { ArrowUpRight, Database, BrainCircuit } from "lucide-react";
+import { Play } from "lucide-react";
 import Image from "next/image";
 import { useState, useEffect } from "react";
+import Link from "next/link";
 
-export default function Hero() {
+const Hero = () => {
   // Tunda load komponen berat sampai interaksi atau setelah mount
   const [isMounted, setIsMounted] = useState(false);
   const [showVideo, setShowVideo] = useState(false);
+  const DRIVE_VIDEO_ID = "1mlqfFFLgap1_LkFGLh4GBYIUBIsBkawI";
 
   useEffect(() => {
     setIsMounted(true);
@@ -54,7 +56,7 @@ export default function Hero() {
         </motion.div>
 
         <h1 className="text-5xl md:text-7xl font-bold tracking-tight leading-tight mb-6 text-white">
-          Persiapkan Karir Masa Depan <br />
+          Persiapkan Karir Masa Depan Anda<br />
           <span>Di Era</span> <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 via-cyan-400 to-blue-400">Artificial Intelligence</span>
         </h1>
 
@@ -67,49 +69,41 @@ export default function Hero() {
           {/* Container Pembungkus Utama dengan Aspect Ratio Terkunci */}
           <div className="relative w-full aspect-video rounded-xl overflow-hidden shadow-2xl shadow-blue-900/20 border border-white/10 bg-slate-900 group">
 
-            {/* KONDISI 1: Belum diklik (Tampilkan Thumbnail) */}
             {!showVideo ? (
+              /* COVER IMAGE (Fungsi Facade agar loading website cepat) */
               <div
-                className="absolute inset-0 w-full h-full flex items-center justify-center cursor-pointer"
+                className="absolute inset-0 z-10 cursor-pointer group"
                 onClick={() => setShowVideo(true)}
               >
-                {/* GAMBAR BACKGROUND: Gunakan 'fill' agar otomatis mengikuti ukuran kotak */}
                 <Image
-                  src="/images/thumbnail_uin.png"
-                  alt="Video Thumbnail"
+                  src="/images/thumbnail.jpeg"
+                  alt="Thumbnail"
                   fill
-                  className="object-cover opacity-100 transition-transform duration-700 group-hover:scale-105"
+                  className="object-cover opacity-90 group-hover:opacity-75 transition-opacity"
                   priority
-                  sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                 />
-
-                {/* Overlay Hitam Transparan (Supaya teks terbaca) */}
-                <div className="absolute inset-0 bg-black/20 group-hover:bg-black/10 transition-colors"></div>
-
-                {/* Tombol Play */}
-                <div className="relative z-10 flex flex-col items-center gap-3">
-                  <div className="w-16 h-16 md:w-20 md:h-20 bg-blue-600/90 rounded-full flex items-center justify-center pl-1 shadow-[0_0_30px_rgba(37,99,235,0.5)] group-hover:scale-110 transition-transform duration-300">
-                    <IoLogoYoutube className="w-6 h-6 md:w-8 md:h-8 text-white fill-current" />
+                <div className="absolute inset-0 flex items-center justify-center">
+                  <div className="w-20 h-20 bg-blue-500 backdrop-blur-md rounded-full flex items-center justify-center border border-white/20 shadow-[0_0_30px_rgba(37,99,235,0.5)] group-hover:scale-110 transition-transform">
+                    <Play className="w-8 h-8 text-white fill-white ml-1"/>
                   </div>
                 </div>
               </div>
             ) : (
-              /* KONDISI 2: Sudah diklik (Tampilkan Iframe) */
-              /* Gunakan 'absolute inset-0' agar iframe terkunci rapat di dalam kotak */
+              /* IFRAME GOOGLE DRIVE RESMI */
               <iframe
-                className="absolute top-0 left-0 w-full h-full"
-                src="https://www.youtube.com/embed/s5Ef7ZCiDNs?autoplay=1&rel=0&modestbranding=1"
-                title="Sains Data UIN Salatiga Video"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                src={`https://drive.google.com/file/d/${DRIVE_VIDEO_ID}/preview`}
+                className="w-full h-full absolute top-0 left-0"
+                allow="autoplay; fullscreen"
                 allowFullScreen
-                loading="lazy"
               ></iframe>
             )}
           </div>
         </div>
 
         <p className="text-lg md:text-xl text-slate-400 max-w-2xl mx-auto mb-10">
-          Menurut World Economic Forum Profesi <span className="text-white font-semibold">Data Scientist & AI Engineer</span>, Sangat Dibutuhkan dalam 5-10 tahun ke depan.
+            <Link href="https://www.weforum.org/press/2025/01/future-of-jobs-report-2025-78-million-new-job-opportunities-by-2030-but-urgent-upskilling-needed-to-prepare-workforces/" className="text-blue-600">
+                Menurut World Economic Forum, 
+            </Link> profesi yang berkenaan <span className="text-white font-semibold">Ai dan Big Data</span>, sangat dibutuhkan dalam 5-10 tahun ke depan.
         </p>
 
         <div className="flex flex-col sm:flex-row gap-4 justify-center mb-15">
@@ -144,7 +138,11 @@ export default function Hero() {
       </div>
 
       {/* Footer Gradient Static - CSS Only */}
-      <div className="absolute bottom-0 left-0 w-full h-32 bg-gradient-to-t from-black via-black/50 to-transparent z-10 pointer-events-none"></div>
+      <div className="absolute bottom-0 left-0 w-full h-32 bg-gradient-to-t from-black via-black/50 to-transparent z-5"></div>
+      <div className="absolute bottom-0 left-0 w-full h-[1px] bg-gradient-to-r from-transparent via-blue-500 to-transparent z-20 opacity-50"></div>
+      <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-1/2 h-[2px] bg-blue-500 blur-sm z-20"></div>
     </section>
   );
 }
+
+export default Hero

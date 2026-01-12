@@ -3,6 +3,7 @@ import Link from "next/link";
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Plus, Minus, MessageCircle } from "lucide-react";
+import { FaWhatsapp } from "react-icons/fa6";
 
 // === DATA PERTANYAAN (Riset Khusus Siswa Kelas 12) ===
 const faqData = [
@@ -23,12 +24,12 @@ const faqData = [
     answer: "Tidak wajib! Di UIN Salatiga, kita punya fasilitas Lab Komputer HPC (High Performance Computing) dan Mempunyai Server Sendiri. Jadi untuk tugas berat, kamu bisa pakai fasilitas kampus. Laptop spek menengah (Core i3/i5 atau Ryzen 3/5) sudah cukup untuk coding dasar.",
   },
   {
-    question: "Apa bedanya Sains Data UIN Salatiga dengan Teknik Informatika biasa?",
-    answer: "Kalau TI fokus bikin aplikasi, Sains Data fokus mengolah data di dalam aplikasi itu untuk jadi keputusan cerdas (AI). Di UIN Salatiga, kita punya keunggulan biaya UKT yang jauh lebih terjangkau dengan kurikulum yang setara standar industri global.",
+    question: "Apa bedanya Sains Data UIN Salatiga dengan Teknik Informatika?",
+    answer: "Teknik Informatika fokus dalam pengembangan aplikasi, sedangkan Sains Data fokus mengolah data di dalam aplikasi itu untuk menjadi keputusan cerdas (AI).",
   },
 ];
 
-export default function FAQ() {
+ const FAQ = () => {
   // State untuk melacak pertanyaan mana yang sedang terbuka
   const [openIndex, setOpenIndex] = useState<number | null>(null);
 
@@ -79,7 +80,7 @@ export default function FAQ() {
                 transition-all duration-300 ease-out
                 hover:-translate-y-1 active:scale-95
             ">
-                <MessageCircle className="w-5 h-5" />
+                <FaWhatsapp className="w-5 h-5" />
                 <span>Langsung Aja Tanya!</span>
             </Link>
           </div>
@@ -142,3 +143,5 @@ export default function FAQ() {
     </section>
   );
 }
+
+export default FAQ

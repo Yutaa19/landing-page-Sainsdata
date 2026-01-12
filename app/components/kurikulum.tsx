@@ -2,29 +2,30 @@
 
 import Image from "next/image";
 import { motion } from "framer-motion";
-import { CheckCircle2, ArrowUpRight } from "lucide-react"; // Pastikan install lucide-react
+import { CheckCircle2, ArrowUpRight } from "lucide-react"; 
+// Pastikan install lucide-react
 
 // === 1. DATABASE MATA KULIAH (14 ITEM) ===
 // Edit teksnya di sini, nanti tampilan otomatis berubah.
 
 const materiKuliah = [
-  { id: 1, title: "Pemograman Dasar", desc: "D sini Kalian akan belajar struktur dasar Python mulai dari Variabel, Tipe Data, hingga Perulangan (Looping) dengan studi kasus nyata. Kalian juga akan mendapatkan 'Blueprint' Logika yang bisa dipakai di bahasa pemrograman apa pun. Cocok untuk pemula yang belum pernah menyentuh koding sama sekali jadi jangan khawatir jika belum ada background IT. ini adalah fondasi wajib untuk menjadi Data Scientist handal.", image: "/images/ular.png" },
-  { id: 2, title: "Aljabar Linear Elementer", desc: "Di Mata Kuliah ini kalian akan belajar cara 'bermain' dengan Sistem Persamaan Linear tanpa pusing, membedah struktur Fungsi Kuadrat untuk mengasah pola pikir, dan melihat keindahan pola dalam Barisan & Deret. Kalian akan diajarkan teknik reverse-engineering soal cerita menjadi model matematika yang sederhana dan elegan.", image: "/images/aljabar.png" },
-  { id: 3, title: "Basis Data SQL", desc: "kalian disini akan belajar bagaimana cara merancang arsitektur database yang tahan banting, mampu menangani lonjakan data hingga 10x lipat tanpa downtime. Kita akan gunakan strategi Normalization & Indexing rahasia agar aplikasi kalian tidak lemot, mencakup perancangan Table Structure, Relational Logic, dan optimasi Storage.", image: "/images/database.png" },
-  { id: 4, title: "Struktur Data Dan Algoritma", desc: "Di sini kalian akan mempelajari logika dasar penyusunan data—mulai dari Array, Linked List, hingga Hash Map—dan bagaimana raksasa teknologi menggunakannya untuk menciptakan sistem rekomendasi yang super cepat dan akurat. Ini adalah ilmu fundamental untuk merancang aplikasi yang tidak hanya berjalan, tapi juga 'mengerti' keinginan user.", image: "/images/algo.png" },
-  { id: 5, title: "Data Visualization & Storytelling", desc: "Di sini kalian akan belajar seni Data Storytelling, bukan sekadar bikin grafik cantik yang kosong makna. Kalian akan dilatih untuk mengubah jutaan baris angka rumit menjadi narasi visual yang persuasif, sehingga orang awam hingga CEO perusahaan pun bisa langsung paham dalam sekali lihat..", image: "/images/visualisasi.png" },
-  { id: 6, title: "Machine Learning: Supervised", desc: "Di mata kuliah ini, kalian akan berhenti menjadi pengguna AI dan mulai menjadi Pencipta AI. Kalian akan membangun Supervised Learning Model, teknik yang digunakan perusahaan raksasa untuk memprediksi harga saham, mendeteksi penyakit, hingga mengenali wajah.", image: "/images/machine-learning.png" },
-  { id: 7, title: "Pengembangan Aplikasi Web", desc: "Di sini Kalian akan mempelajari framework modern seperti Streamlit atau Flask/Django untuk menyulap kode Python menjadi web apps fungsional. Kami akan ajarkan cara membuat API (Application Programming Interface) agar model prediksi kalian bisa 'ngobrol' dengan website. Ini adalah langkah krusial mengubah kalian dari sekadar Analis Data menjadi Pembuat Produk Teknologi.", image: "/images/web.png" },
-  { id: 8, title: "Deep Learning & Neural Networks", desc: "Kalian akan merancang Deep Neural Networks yang memiliki banyak lapisan (layers) untuk mengenali pola abstrak. Kami akan ajarkan logika di balik Backpropagation—cara otak buatan 'belajar dari kesalahan' untuk menjadi semakin pintar setiap detiknya. Ini adalah langkah kalian menuju penciptaan Artificial General Intelligence (AGI) masa depan.", image: "/images/deep-learning.png" },
-  { id: 9, title: "Natural Language Processing (NLP)", desc: "Kalian akan mempelajari logika dasar text processing yang menjadi batu bata pertama dalam pembangunan Large Language Models (LLM). Jika cita-cita kalian adalah menciptakan asisten virtual cerdas atau sistem yang mengerti bahasa manusia, maka perjalanan kalian dimulai dari sini. Tanpa menguasai NLP, kalian hanya akan jadi pengguna, bukan pencipta.", image: "/images/LLM.png" },
-  { id: 10, title: "Data Mining", desc: "Di era digital, data adalah 'minyak baru', tapi masih mentah dan kotor. Di mata kuliah ini, kalian akan diajarkan cara menjadi Penambang Emas Digital. Kalian akan mempelajari teknik Data Mining untuk menggali tumpukan data raksasa dan menemukan Hidden Gems atau pola tersembunyi yang tidak terlihat oleh mata biasa..", image: "/images/mining.png" },
-  { id: 11, title: "Mlops For Data Science", desc: "Kalian akan menguasai teknik Deployment, Scaling, dan Monitoring. Kami akan ajarkan cara membungkus model kalian dengan teknologi Containerization (Docker) dan mengelolanya dengan Kubernetes. Ini adalah skill mahal yang membedakan antara seorang pemula yang hanya bisa coding, dengan seorang Engineer yang bisa membangun sistem AI yang hidup dan tahan banting", image: "/images/Mlops.png" },
-  { id: 12, title: "Computer Vision", desc: "Kalian akan belajar membangun arsitektur Convolutional Neural Networks (CNN) untuk mengajarkan mesin membedakan objek secara akurat. Dari mengenali rambu lalu lintas hingga mendeteksi wajah dalam keramaian, kalian akan merancang sistem yang memiliki persepsi visual setara—atau bahkan melebihi—mata manusia.", image: "/images/Vision.png" },
-  { id: 13, title: "Analytics Big Data", desc: "Kalian akan mempelajari teknologi Distributed Computing seperti Apache Hadoop dan Spark. Kami akan ajarkan cara memecah tugas berat ke ribuan komputer sekaligus agar pemrosesan data selesai dalam hitungan detik. Ini adalah skill wajib untuk bekerja di perusahaan yang datanya 'tumpah ruah' seperti E-commerce atau Telco.", image: "/images/big-data.png" },
-  { id: 14, title: "Cloud Computing", desc: "Kalian akan belajar merancang infrastruktur yang Scalable (bisa membesar otomatis saat ramai) menggunakan platform standar global seperti AWS (Amazon Web Services) atau Google Cloud. Di sini, kalian tidak lagi menyimpan data di harddisk yang rentan rusak, tapi membangun sistem terdistribusi yang aman, cepat, dan always-on 24 jam non-stop.", image: "/images/cloud-computing.png" },
+  { id: 1, title: "Matematika dan Statistik", desc: "Matematika dan statistika adalah bahasa universal di balik setiap teknologi cerdas. Di sini, Anda akan belajar memodelkan ketidakpastian menjadi prediksi yang akurat. Bagi calon Data Scientist, penguasaan statistik adalah pondasi mutlak untuk membangun model prediktif yang valid dan tidak bias. Sementara bagi Data Analyst, kemampuan inferensi statistik memungkinkan Anda mengubah sekumpulan angka menjadi rekomendasi pengambilan keputusan yang tepat. Kemampuan inilah yang akan membedakan Anda dari praktisi biasa menjadi seorang ahli data yang mampu memberikan insight bermakna di tengah ketidakpastian pasar global.", image: "/images/MATEMATIKA.png" },
+  { id: 2, title: "Computing and Computer Fundamentals (CCF)", desc: "Memahami cara kerja komputer adalah langkah awal menjadi talenta digital yang kompeten. Melalui Computing Fundamentals, Anda akan mempelajari arsitektur sistem, sistem operasi, hingga infrastruktur cloud yang menjadi tulang punggung industri digital. Kompetensi ini sangat krusial bagi Data Engineer untuk merancang sistem pemrosesan data yang cepat dan stabil. Selain itu, bagi calon Web Developer, pemahaman mendalam tentang bagaimana perangkat lunak berinteraksi dengan perangkat keras akan membantu Anda menciptakan aplikasi yang efisien dan responsif. Jadilah profesional yang tidak hanya bisa menggunakan teknologi, tetapi benar-benar menguasai mesin di baliknya", image: "/images/COMPUTER.png" },
+  { id: 3, title: "Artificial Intelligence (AI)", desc: "Berkaitan dengan Artificial Intelligence, Anda akan belajar merancang sistem yang mampu meniru kecerdasan manusia, mulai dari pengenalan suara hingga pengambilan keputusan otonom. Sebagai calon Data Scientist, Anda akan dibekali kemampuan untuk menciptakan solusi cerdas yang mampu  mengotomasi kerja industri. Fokus pada logika fuzzy, jaringan saraf tiruan, dan sistem pakar akan menjadikan Anda inovator yang sangat dicari oleh perusahaan teknologi global (Big Tech) untuk mewujudkan sistem yang lebih pintar dan efisien.", image: "/images/AI.png" },
+  { id: 4, title: "Big Data Systems (BDS)", desc: "Dunia saat ini memiliki keanekaragaman data, maka kemampuan mengelola data skala besar adalah kekuatan utama. Big Data Systems mengajarkan Anda cara membangun dan mengelola ekosistem data raksasa menggunakan teknologi terkini. Ini adalah keahlian inti seorang Data Engineer yang bertugas memastikan aliran data tetap lancar meski volume, variasi, dan kecepatannya meningkat drastis. Dengan menguasai sistem terdistribusi, Anda akan menjadi arsitek di balik layar yang memungkinkan perusahaan besar mengolah informasi masif secara real-time untuk keunggulan kompetitif mereka.", image: "/images/big_data.png" },
+  { id: 5, title: "Data Acquisition, Management, and Governance (DG)", desc: "Data yang berkualitas lahir dari pengelolaan yang profesional. Di sini, Anda akan mempelajari seni akuisisi data, teknik ETL (Extract, Transform, Load), hingga tata kelola data yang etis. Bagi seorang Data Engineer, bidang ini sangat penting untuk memastikan bahwa data yang digunakan perusahaan akurat, bersih, dan mematuhi regulasi hukum. Saat ini Perusahaan global sangat membutuhkan ahli yang mampu menjaga integritas data sebagai aset paling berharga mereka. Kuasai manajemen data untuk menjadi profesional yang menjamin transparansi dan keandalan informasi di setiap level organisasi.", image: "/images/data_akuisisi.png" },
+  { id: 6, title: "Data Mining (DM)", desc: "Anda akan mempelajari berbagai teknik untuk menemukan pola tersembunyi, tren pasar, dan anomali yang tidak terlihat oleh mata awam. Kompetensi ini adalah senjata rahasia bagi seorang Data Analyst untuk memberikan wawasan mendalam tentang perilaku konsumen atau deteksi kecurangan (fraud detection). Dengan menguasai algoritma klasifikasi, klastering, dan asosiasi, Anda akan menjadi pakar yang mampu mengubah data historis menjadi strategi masa depan yang menguntungkan bagi pengguna.", image: "/images/ml.png" },
+  { id: 7, title: "Data Privacy, Security, Integrity, and Analysis for Security (DP)", desc: "Di tengah meningkatnya ancaman siber saat ini, keamanan data adalah prioritas tertinggi. Bidang ini membekali Anda dengan teknik kriptografi, keamanan jaringan, dan pemahaman mendalam tentang UU Pelindungan Data Pribadi (PDP). Bagi calon Security Data Analyst, Anda akan belajar bagaimana melindungi aset digital dari peretasan sekaligus menjaga integritasnya. Memahami etika privasi bukan hanya soal teknis, tetapi tentang membangun kepercayaan publik. Jadilah garda terdepan pelindung data yang memastikan inovasi teknologi tetap berjalan selaras dengan keamanan dan privasi pengguna.", image: "/images/security.png" },
+  { id: 8, title: "Machine Learning (ML)", desc: "Machine Learning adalah inti dari perkembangan Sains Data modern. Anda akan belajar bagaimana melatih mesin untuk belajar dari pengalaman tanpa diprogram secara eksplisit. Bidang ini adalah jalur utama bagi calon Data Scientist untuk membangun model prediksi, sistem rekomendasi seperti Netflix, hingga teknologi pemrosesan bahasa alami (NLP). Dengan menguasai supervised, unsupervised, hingga deep learning, Anda akan memiliki kemampuan untuk menciptakan solusi otomatis yang cerdas dan adaptif terhadap perubahan data yang dinamis di industri 5.0.", image: "/images/machine.png" },
+  { id: 9, title: "Programming, Data Structures, and Algorithms (PDA)", desc: "Pemrograman, Struktur Data, dan Algoritma adalah bahasa universal untuk membangun solusi digital yang cerdas. Di sini, Anda belajar menulis kode yang tidak hanya sekadar berjalan, tetapi juga optimal dalam kecepatan dan penggunaan memori. Bagi Data Scientist, keahlian ini krusial untuk melatih model AI yang efisien, sementara bagi Data Analyst, logika pemrograman yang kuat memudahkan manipulasi data yang kompleks dalam sekejap. Sebagai calon Data Engineer, Anda akan mengandalkan pemahaman algoritma untuk membangun jalur data raksasa yang stabil. Sedangkan bagi Web Developer, bidang ini adalah kunci untuk menciptakan aplikasi yang responsif dan berkinerja tinggi.", image: "/images/algoritma.png" },
+  { id: 10, title: "Software Development and Maintenance (SDM)", desc: "Membangun perangkat lunak bukan sekadar coding, melainkan tentang siklus hidup sistem yang berkelanjutan. Di sini, Anda akan belajar metodologi Agile, DevOps, hingga pengujian perangkat lunak berstandar industri. Kompetensi ini sangat vital bagi Web Developer agar mampu menciptakan produk digital yang berkualitas tinggi, minim bug, dan mudah dirawat. Dengan memahami Software Development Life Cycle (SDLC), Anda akan menjadi profesional yang mampu bekerja dalam tim skala besar untuk menghadirkan solusi teknologi yang stabil dan berdampak luas.", image: "/images/software.png" },
+  { id: 11, title: "Analysis and Presentation (AP)", desc: "Wawasan data menjadi kurang bermakna jika tidak disertai dengan komunikasi yang efektif. Melalui Analysis and Presentation, Anda akan menguasai teknik Data Storytelling dan visualisasi data yang interaktif. Seorang Data Analyst yang sukses adalah mereka yang mampu menerjemahkan grafik rumit menjadi narasi yang mudah dipahami oleh pengambil keputusan. Anda akan belajar menggunakan tools visualisasi terkini untuk mempresentasikan temuan Anda secara persuasif. Jadilah jembatan komunikasi antara data dan kebijakan, dan pastikan setiap analisis yang Anda buat dapat dipahami secara efektif oleh pengguna.", image: "/images/presentasi.png" },
+  { id: 12, title: "Professionalism (PR)", desc: "Menjadi talenta digital menuntut lebih dari sekadar keahlian teknis, dibutuhkan profesionalisme dan etika kerja standar global. Bidang ini membekali Anda dengan kemampuan kolaborasi tim, etika profesi, dan pemahaman tentang standar industri internasional. Bagi Anda yang mengincar karier sebagai Consultant atau Project Manager, sikap profesional adalah kunci untuk memenangkan kepercayaan klien dan memimpin proyek skala besar. Kami mempersiapkan Anda menjadi lulusan yang siap kerja, memiliki integritas tinggi, dan mampu beradaptasi di lingkungan kerja multikultural yang dinamis.", image: "/images/profesional.png" },
+  { id: 13, title: "Pembentukan Karakter", desc: "Melalui program pembentukan karakter, kami mengasah leadership, resiliensi, dan empati Anda didasarkan pada 7 (tujuh) nilai utama Islam wasathiyyah yaitu tawassuth (moderasi), i’tidal (adil), tasamuh (toleransi), syura (musyawarah), islah (perbaikan), qudwah (keteladanan), dan muwathanah (kewarganegaraan) . Di dunia kerja, seorang talenta digital tidak hanya bekerja dengan mesin, tetapi juga memimpin manusia. Kami ingin Anda menjadi inovator yang memiliki integritas moral dan semangat pantang menyerah. Dengan karakter yang kuat, Anda tidak hanya akan sukses secara karier, tetapi juga menjadi agen perubahan yang membawa dampak positif bagi masyarakat dan lingkungan melalui teknologi.", image: "/images/pembentukan.png" },
+  { id: 14, title: "Penelitian dan Pengembangan (R&D)", desc: "Sains Data adalah bidang yang terus berkembang, dan rasa ingin tahu adalah kuncinya. Di sini, Anda akan belajar metodologi penelitian untuk mengeksplorasi dan menghasilkan solusi yang cerdas dan inovatif. Bagi Anda yang berjiwa inovator, bidang R&D membuka peluang karier sebagai profesional yang mampu mempublikasikan temuan di tingkat internasional. Anda akan diajak untuk berpikir kritis, melakukan eksperimen data, dan berkontribusi pada kemajuan ilmu pengetahuan. Jadilah penemu masa depan yang selalu selangkah lebih maju dalam mengembangkan teknologi terbaru!.", image: "/images/rnd.png" },
 ];
 
-export default function Curriculum() {
+const Curriculum = () => {
 
   const scroolUkt = () => {
     const element = document.getElementById('biaya-ukt')
@@ -49,7 +50,7 @@ export default function Curriculum() {
               Kurikulum <span className="text-blue-500">Mengikuti Perkembangan Teknologi</span>
             </h2>
             <p className="text-slate-400 max-w-2xl mx-auto">
-              14 Mata Kuliah inti yang dirancang untuk mengubah pemula menjadi Expert Data Scientist Bahkan masih ada Mata Kuliah lain yang ga kalah keren nya hanya ada di Sains Data UIN SALATIGA.
+              Kurikulum Berbasis OBE (Outcome Based Education) yang relevan dengan kebutuhan industry, dunia usaha, dan dunia kerja global.
             </p>
           </div>
 
@@ -90,7 +91,7 @@ export default function Curriculum() {
                 {/* 1. BAGIAN GAMBAR */}
                 {/* 1. BAGIAN GAMBAR */}
                 <div className="w-full lg:w-1/2 relative group">
-                      {/* PERBAIKAN:
+                  {/* PERBAIKAN:
           1. Hapus 'h-[250px]' -> Ganti jadi 'aspect-video' (Rasio 16:9).
             Ini bikin tinggi otomatis menyesuaikan lebar HP, jadi gambar tetap landscape (tidak ke-crop).
           2. Tambahkan 'lg:aspect-auto' -> Supaya di desktop rasionya bebas.
@@ -134,40 +135,18 @@ export default function Curriculum() {
           })}
 
         </div>
-{/* 1. Wrapper Pembungkus (Wajib ada biar tengah) */}
-<div className="w-full flex justify-center relative z-50">
-    
-    <button 
-        onClick={scroolUkt} 
-        className="
-            group relative
-            flex items-center justify-center gap-3
-            px-8 py-4
-            bg-gradient-to-br from-blue-500 to-blue-700
-            hover:from-blue-400 hover:to-blue-600
-            text-white text-lg font-bold
-            rounded-2xl
-            shadow-[0_0_20px_rgba(148,163,184,0.3)] 
-            hover:shadow-[0_10px_40px_rgba(148,163,184,0.6)]
-            
-            cursor-pointer
-            transition-all 
-            duration-300
-            ease-out
-            hover:-translate-y-1
-            active:scale-95
-            mt-10
-        "
-    >
-        {/* BAGIAN IKON */}
-        <div className="bg-white rounded-full p-1 group-hover:rotate-45 transition-transform duration-300">
-            <ArrowUpRight className="w-4 h-4 text-blue-600" strokeWidth={3} />
+        {/* 1. Wrapper Pembungkus (Wajib ada biar tengah) */}
+        <div className="w-full flex justify-center relative z-50">
+
+         <button
+            onClick={scroolUkt}
+            className="group relative cursor-pointer flex items-center justify-center gap-3 px-8 py-4 mt-10 bg-blue-600 hover:bg-blue-500 text-white font-bold text-lg rounded-full transition-all duration-300 shadow-lg hover:shadow-blue-500/50"
+          >
+            Gabung Sekarang
+            <ArrowUpRight className="w-5 h-5" />
+          </button>
+
         </div>
-
-        Gabung Sekarang
-    </button>
-
-</div>
       </div>
       <div className="absolute bottom-0 left-0 w-full h-32 bg-gradient-to-t from-black via-black/50 to-transparent z-10"></div>
       <div className="absolute bottom-0 left-0 w-full h-[1px] bg-gradient-to-r from-transparent via-blue-500 to-transparent z-20 opacity-50"></div>
@@ -175,3 +154,5 @@ export default function Curriculum() {
     </section>
   );
 }
+
+export default Curriculum

@@ -12,7 +12,7 @@ const webinars = [
     { id: 4, title: "Web 3 And Blockchain", image: "/images/webinar4.jpeg" },
 ];
 
-export default function ExclusiveWebinar() {
+const ExclusiveWebinar = () => {
     return (
         <section className="py-20 bg-black selection:bg-cyan-500 selection:text-white">
             <div className="container mx-auto px-4 md:px-6">
@@ -27,7 +27,7 @@ export default function ExclusiveWebinar() {
                         Seharga <span className="text-slate-400 line-through decoration-red-500 decoration-2">Rp 500rb</span> Per Webinar
                     </h2>
                     <p className="text-slate-300 text-lg max-w-2xl mx-auto">
-                        Kalian akan dapatkan <span className="text-white font-bold">GRATIS</span> hanya dengan menjadi bagian dari keluarga besar Sains Data UIN Salatiga.
+                        Kalian akan dapatkan <span className="text-white font-bold">GRATIS</span> hanya dengan menjadi bagian dari keluarga besar Program Studi Sains Data UIN Salatiga.
                     </p>
                 </div>
 
@@ -115,3 +115,5 @@ export default function ExclusiveWebinar() {
         </section>
     );
 }
+
+export default ExclusiveWebinar
