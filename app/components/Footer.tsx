@@ -87,6 +87,14 @@ const Footer = () => {
                             <Globe className="w-4 h-4" />
                             <span>tarbiyah.uinsalatiga.ac.id/snd</span>
                         </Link>
+                        <Link
+                            href="https://wa.me/6283106796570"
+                            target="_blank"
+                            className="flex items-center gap-2 hover:text-green-400 transition-colors"
+                        >
+                            <FaWhatsapp className="w-4 h-4" />
+                            <span>tarbiyah.uinsalatiga.ac.id/snd</span>
+                        </Link>
 
                     </div>
                 </motion.div>
