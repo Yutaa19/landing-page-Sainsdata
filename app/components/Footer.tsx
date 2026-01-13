@@ -93,7 +93,7 @@ const Footer = () => {
                             className="flex items-center gap-2 hover:text-green-400 transition-colors"
                         >
                             <FaWhatsapp className="w-4 h-4" />
-                            <span>tarbiyah.uinsalatiga.ac.id/snd</span>
+                            <span>+62 831-0679-6570</span>
                         </Link>
 
                     </div>
