@@ -59,7 +59,7 @@ const Events = () => {
                                 </div>
                                 <div>
                                     <p className="text-sm font-bold text-white">Sains Data Uin Salatiga</p>
-                                    <p className="text-xs text-slate-400">19 Agustus 2025</p>
+                                    <p className="text-xs text-slate-400">9 September 2025</p>
                                     <p className="text-sm text-slate-300 mt-1">
                                         Suasana Seminar Neo Data Fest kemarin pecah banget! 🔥 Mahasiswa langsung memahami prospek Sains data di masa depan.
                                     </p>
