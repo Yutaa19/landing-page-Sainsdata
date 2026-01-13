@@ -14,10 +14,8 @@ const Akreditasi = () => {
             <div className="container mx-auto px-6">
 
                 <div className="flex flex-col lg:flex-row items-center gap-12 lg:gap-20">
-
-                    {/* ======================================= */}
                     {/* BAGIAN KIRI: TEKS & INFO                */}
-                    {/* ======================================= */}
+
                     <div className="w-full lg:w-1/2 text-center lg:text-left">
                         <motion.div
                             initial={{ opacity: 0, x: -50 }}
@@ -43,10 +41,7 @@ const Akreditasi = () => {
                             </p>
                         </motion.div>
                     </div>
-
-                    {/* ======================================= */}
                     {/* BAGIAN KANAN: GAMBAR SERTIFIKAT         */}
-                    {/* ======================================= */}
                     <div className="w-full lg:w-1/2 flex justify-center lg:justify-end relative">
 
                         {/* Efek Glow di Belakang Sertifikat */}

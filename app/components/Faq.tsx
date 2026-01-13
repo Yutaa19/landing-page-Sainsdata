@@ -9,11 +9,11 @@ import { FaWhatsapp } from "react-icons/fa6";
 const faqData = [
   {
     question: "Kak, aku belum bisa koding sama sekali, apakah bisa masuk Sains Data?",
-    answer: "Bisa banget! Kurikulum kami dirancang dari nol (Zero to Hero). Di semester awal, kamu akan diajarkan logika dasar pemrograman. Jadi, kamu tidak perlu punya background IT sebelumnya. Yang penting punya kemauan belajar dan rasa penasaran yang tinggi!",
+    answer: "Bisa banget! Kurikulum kami dirancang dari nol (Zero to Hero). Di semester awal, Anda akan diajarkan logika dasar pemrograman. Jadi, Anda tidak perlu punya background IT sebelumnya. Yang penting punya kemauan belajar dan rasa penasaran yang tinggi!",
   },
   {
     question: "Apakah harus jago Matematika biar bisa survive di jurusan ini?",
-    answer: "Gak harus jenius matematika kok. Kamu cuma perlu paham logika dasar. Matematika di Sains Data itu 'Matematika Terapan', artinya kita pakai rumus untuk memecahkan masalah nyata, bukan cuma hitung-hitungan abstrak di kertas. Kita juga banyak pakai software bantuan.",
+    answer: "Gak harus jenius matematika kok. Anda cuma perlu paham logika dasar. Matematika di Sains Data itu 'Matematika Terapan', artinya kita pakai rumus untuk memecahkan masalah nyata, bukan cuma hitung-hitungan abstrak di kertas. Kita juga banyak pakai software bantuan.",
   },
   {
     question: "Lulusan Sains Data kerjanya jadi apa aja? Susah cari kerja gak?",
@@ -21,7 +21,7 @@ const faqData = [
   },
   {
     question: "Apakah harus punya Laptop Spek Dewa (Gaming) buat kuliah?",
-    answer: "Tidak wajib! Di UIN Salatiga, kita punya fasilitas Lab Komputer HPC (High Performance Computing) dan Mempunyai Server Sendiri. Jadi untuk tugas berat, kamu bisa pakai fasilitas kampus. Laptop spek menengah (Core i3/i5 atau Ryzen 3/5) sudah cukup untuk coding dasar.",
+    answer: "Tidak wajib! Di UIN Salatiga, kita punya fasilitas Lab Komputer HPC (High Performance Computing) dan Mempunyai Server Sendiri. Jadi untuk tugas berat, Anda bisa pakai fasilitas kampus. Laptop spek menengah (Core i3/i5 atau Ryzen 3/5) sudah cukup untuk coding dasar.",
   },
   {
     question: "Apa bedanya Sains Data UIN Salatiga dengan Teknik Informatika?",
@@ -68,7 +68,7 @@ const faqData = [
             </p>
 
             {/* Tombol WA */}
-            <Link href="https://wa.me/6285799350924" className="
+            <Link href="https://wa.me/xxx-xxx-xxx" className="
                 group relative z-50 cursor-pointer inline-flex
                 items-center gap-3
                 px-6 py-3 md:px-8 md:py-4

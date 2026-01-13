@@ -18,8 +18,6 @@ const RectorQuote = () => {
         >
             
             {/* PERBAIKAN UTAMA DI SINI:
-               Gunakan 'md:flex-row' (bukan lg:flex-row).
-               Ini memaksa iPad (tablet) untuk berbaris ke samping, bukan ke bawah.
             */}
             <div className="flex flex-col md:flex-row items-end">
                 

@@ -77,12 +77,12 @@ const Footer = () => {
 
                         {/* 3. WHATSAPP / PHONE */}
                         <Link
-                            href="https://wa.me/6285799350924"
+                            href="https://wa.me/xxx-xxx-xxx"
                             target="_blank"
                             className="flex items-center gap-2 hover:text-green-400 transition-colors"
                         >
                             <FaWhatsapp className="w-4 h-4" />
-                            <span>+62 857-9935-0924</span>
+                            <span>+62 xxxx-xxxx</span>
                         </Link>
 
                         {/* Separator */}

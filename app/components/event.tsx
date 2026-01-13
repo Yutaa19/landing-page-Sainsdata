@@ -82,7 +82,7 @@ const Events = () => {
 
                         <div className="space-y-6 text-lg text-slate-300 leading-relaxed">
                             <p>
-                                Kalian akan mendapatkan akses prioritas ke berbagai{' '}
+                                Anda akan mendapatkan akses prioritas ke berbagai{' '}
                                 <span className="text-white font-bold">Seminar Nasional & Workshop Teknis</span>{' '}
                                 yang diadakan rutin setiap semester. Tidak perlu bayar mahal di luar sana untuk belajar teknologi terbaru.
                             </p>
@@ -90,11 +90,11 @@ const Events = () => {
                             <p>
                                 Kami mengundang praktisi dari{' '}
                                 <span className="text-white font-bold">Industri</span>{' '}
-                                untuk bedah kasus nyata. Kalian bisa bertanya langsung, membangun koneksi, dan mendapatkan sertifikat kompetensi yang diakui industri.
+                                untuk bedah kasus nyata. Anda bisa bertanya langsung, membangun koneksi, dan mendapatkan sertifikat kompetensi yang diakui industri.
                             </p>
 
                             <p>
-                                Kalian akan hemat jutaan rupiah karena materi yang diajarkan setara dengan{' '}
+                                Anda akan hemat jutaan rupiah karena materi yang diajarkan setara dengan{' '}
                                 <span className="text-white font-bold">Bootcamp Coding Premium</span>{' '}
                                 di luar sana. Ini fasilitas spesial untuk mahasiswa Sains Data UIN Salatiga.
                             </p>

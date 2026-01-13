@@ -7,9 +7,9 @@ import { Video } from "lucide-react";
 // Data Dummy Poster Webinar (Ganti dengan foto poster kampusmu nanti)
 const webinars = [
     { id: 1, title: "Teknik Simulasi Sains", image: "/images/webinar1.jpeg" },
-    { id: 2, title: "Digital Transformation", image: "/images/webinar2.jpeg" },
+    { id: 2, title: "Digital Transformation", image: "/images/webinar_3.jpeg" },
     { id: 3, title: "Hybrid Esg Architecture", image: "/images/webinar3.jpeg" },
-    { id: 4, title: "Web 3 And Blockchain", image: "/images/webinar4.jpeg" },
+    { id: 4, title: "From Digital Divide to Digital Dignity", image: "/images/webinar_5.jpeg" },
 ];
 
 const ExclusiveWebinar = () => {
@@ -76,7 +76,7 @@ const ExclusiveWebinar = () => {
                             <div className="w-8 h-8 bg-blue-500 rounded-full flex items-center justify-center">
                                 <Video className="w-4 h-4 text-white" />
                             </div>
-                            <span>Live On Zoom + Recording</span>
+                            <span>Live On Zoom</span>
                         </div>
 
                         {/* GRID POSTER WEBINAR */}

@@ -4,12 +4,10 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { Users, ArrowRight, ArrowUpRight } from 'lucide-react';
 // --- KONFIGURASI DATA GAMBAR ---
-// Masukkan foto-foto kegiatan Anda disini. 
-// "desktopPosition" mengatur letak foto saat di layar komputer (agar tersebar).
 const galleryImages = [
   {
     id: 1,
-    src: "/images/g_1.jpeg", // Ganti dengan path foto lokal Anda
+    src: "/images/g_1.jpeg",
     alt: "Join lecturer bohme",
     desktopPosition: "top-10 left-[5%] -rotate-6", // Kiri Atas
   },

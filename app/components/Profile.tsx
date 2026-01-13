@@ -4,13 +4,13 @@ import { motion } from "framer-motion";
 import Image from "next/image";
 import { ArrowUpRight } from "lucide-react";
 
-// Data Karir (Pastikan file gambar sudah ada di public/images/)
+// Data Karir
 const careers = [
   {
     title: "Data Engineer",
     image: "/images/data_enginerr.png",
     description: "Profesional yang yang bertanggung jawab untuk merancang, mengembangkan, dan memelihara arsitektur manajemen data baik berupa database, datawarehouse, maupun sistem pemrosesan data berskala besar.",
-    // Gradient Background Khusus per Card (opsional, atau bisa diseragamkan)
+  
     bgGradient: "from-blue-900 to-slate-900", 
     border: "hover:border-blue-400"
   },

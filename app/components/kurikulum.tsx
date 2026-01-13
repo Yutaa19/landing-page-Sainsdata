@@ -3,10 +3,7 @@
 import Image from "next/image";
 import { motion } from "framer-motion";
 import { CheckCircle2, ArrowUpRight } from "lucide-react"; 
-// Pastikan install lucide-react
-
 // === 1. DATABASE MATA KULIAH (14 ITEM) ===
-// Edit teksnya di sini, nanti tampilan otomatis berubah.
 
 const materiKuliah = [
   { id: 1, title: "Matematika dan Statistik", desc: "Matematika dan statistika adalah bahasa universal di balik setiap teknologi cerdas. Di sini, Anda akan belajar memodelkan ketidakpastian menjadi prediksi yang akurat. Bagi calon Data Scientist, penguasaan statistik adalah pondasi mutlak untuk membangun model prediktif yang valid dan tidak bias. Sementara bagi Data Analyst, kemampuan inferensi statistik memungkinkan Anda mengubah sekumpulan angka menjadi rekomendasi pengambilan keputusan yang tepat. Kemampuan inilah yang akan membedakan Anda dari praktisi biasa menjadi seorang ahli data yang mampu memberikan insight bermakna di tengah ketidakpastian pasar global.", image: "/images/MATEMATIKA.png" },
@@ -78,9 +75,6 @@ const Curriculum = () => {
                 transition={{ duration: 0.3, delay: 0.1 }} // Stagger animation
 
                 // === LAYOUT RESPONSIVE ===
-                // Mobile: flex-col (Atas Bawah)
-                // Laptop: flex-row (Kiri Kanan)
-                // Zig-Zag: Kalau Genap 'flex-row', Kalau Ganjil 'flex-row-reverse'
                 className={`
                    relative flex items-center gap-8 lg:gap-16
                    flex-col 
@@ -89,14 +83,8 @@ const Curriculum = () => {
               >
 
                 {/* 1. BAGIAN GAMBAR */}
-                {/* 1. BAGIAN GAMBAR */}
                 <div className="w-full lg:w-1/2 relative group">
-                  {/* PERBAIKAN:
-          1. Hapus 'h-[250px]' -> Ganti jadi 'aspect-video' (Rasio 16:9).
-            Ini bikin tinggi otomatis menyesuaikan lebar HP, jadi gambar tetap landscape (tidak ke-crop).
-          2. Tambahkan 'lg:aspect-auto' -> Supaya di desktop rasionya bebas.
-          3. Pertahankan 'lg:h-[300px]' -> Supaya desktop tetap pakai tinggi fix sesuai desain awal.
-  */}
+         
                   <div className="relative w-full aspect-video lg:aspect-auto lg:h-[300px] rounded-2xl overflow-hidden border border-slate-700/50 bg-slate-800 shadow-2xl">
                     <Image
                       src={item.image}

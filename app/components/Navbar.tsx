@@ -28,17 +28,12 @@ const Navbar = () => {
       }`}
     >
       <div className="container mx-auto px-6 flex justify-between items-center h-20">
-        
-        {/* ======================================= */}
         {/* 1. LOGO & JUDUL (RESPONSIVE AREA)       */}
-        {/* ======================================= */}
         <Link href="/" className="flex items-center gap-3 group">
           
           {/* Container Logo: Kecil di HP (w-10), Besar di Desktop (md:w-12) */}
           <div className="relative w-10 h-10 md:w-12 md:h-12 transition-transform duration-300 group-hover:scale-110">
             <Image 
-                // Pastikan nama file sesuai dengan yang ada di folder public/images/
-                // Saya lihat di file list ada "logo_uin.png"
                 src="/images/logo_uin_nav.png" 
                 alt="Logo UIN Salatiga"
                 fill
@@ -61,10 +56,7 @@ const Navbar = () => {
           </div>
         </Link>
 
-
-        {/* ======================================= */}
         {/* 2. TOMBOL CTA (BUTTON)                  */}
-        {/* ======================================= */}
         <Link
           href="https://pmb.uinsalatiga.ac.id/#jalur-masuk"
           className="
