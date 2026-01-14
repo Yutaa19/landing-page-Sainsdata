@@ -38,10 +38,6 @@ const faqData = [
     setOpenIndex(openIndex === index ? null : index);
   };
 
-  const Linkwa = () => {
-    <Link href="https://wa.me/6285799350924"></Link>
-  }
-
   return (
   <section className="py-20 bg-black relative overflow-hidden selection:bg-cyan-500 selection:text-white">
       <div className="container mx-auto px-6 relative z-10">
@@ -68,7 +64,7 @@ const faqData = [
             </p>
 
             {/* Tombol WA */}
-            <Link href="https://wa.me/6283106796570" className="
+            <Link href="https://wa.wizard.id/f21027" className="
                 group relative z-50 cursor-pointer inline-flex
                 items-center gap-3
                 px-6 py-3 md:px-8 md:py-4

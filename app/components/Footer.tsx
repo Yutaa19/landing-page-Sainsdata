@@ -88,12 +88,12 @@ const Footer = () => {
                             <span>tarbiyah.uinsalatiga.ac.id/snd</span>
                         </Link>
                         <Link
-                            href="https://wa.me/6283106796570"
+                            href="https://wa.wizard.id/f21027"
                             target="_blank"
                             className="flex items-center gap-2 hover:text-green-400 transition-colors"
                         >
                             <FaWhatsapp className="w-4 h-4" />
-                            <span>+62 831-0679-6570</span>
+                            <span>+62 831-8326-5076</span>
                         </Link>
 
                     </div>
