@@ -60,7 +60,7 @@ const Hero = () => {
         </motion.div>
 
         <h1 className="text-5xl md:text-7xl font-bold tracking-tight leading-tight mb-6 text-white">
-          Persiapkan Karir Masa Depan Anda<br />
+          Persiapkan Karier Masa Depan Anda<br />
           <span>Di Era</span> <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 via-cyan-400 to-blue-400">Artificial Intelligence</span>
         </h1>
 
