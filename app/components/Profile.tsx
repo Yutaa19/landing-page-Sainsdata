@@ -54,7 +54,7 @@ const Career = () => {
             viewport={{ once: true }}
             className="text-3xl md:text-5xl font-bold text-white mb-6 leading-tight"
           >
-            Peluang Karir <br />
+            Peluang Karier <br />
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 via-cyan-400 to-blue-400">
               Program Studi Sains Data
             </span>
