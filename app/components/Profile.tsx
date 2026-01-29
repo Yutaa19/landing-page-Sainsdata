@@ -60,7 +60,7 @@ const Career = () => {
             </span>
           </motion.h2>
           <p className="text-slate-400 text-lg">
-            Pilih jalur karir masa depanmu dengan skill teknologi terkini.
+            Pilih jalur karier masa depanmu dengan skill teknologi terkini.
           </p>
         </div>
 
