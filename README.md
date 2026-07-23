@@ -1,36 +1,54 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# 🎓 Landing Page Program Studi Sains Data - UIN Salatiga
 
-## Getting Started
+![Next JS](https://img.shields.io/badge/Next-black?style=for-the-badge&logo=next.js&logoColor=white)
+![TypeScript](https://img.shields.io/badge/typescript-%23007ACC.svg?style=for-the-badge&logo=typescript&logoColor=white)
+![React](https://img.shields.io/badge/react-%2320232a.svg?style=for-the-badge&logo=react&logoColor=%2361DAFB)
+![TailwindCSS](https://img.shields.io/badge/tailwindcss-%2338B2AC.svg?style=for-the-badge&logo=tailwind-css&logoColor=white)
+![Vercel](https://img.shields.io/badge/vercel-%23000000.svg?style=for-the-badge&logo=vercel&logoColor=white)
 
-First, run the development server:
+Repositori ini berisi *source code* untuk antarmuka web resmi (Landing Page) Program Studi Sains Data, Universitas Islam Negeri (UIN) Salatiga. Proyek ini dibangun menggunakan **Next.js (App Router)** dan **TypeScript** untuk menghasilkan antarmuka yang modern, cepat, responsif, dan *SEO-friendly*.
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+🌐 **Live Website:** [sainsdatauinsalatiga.com](https://sainsdatauinsalatiga.com/)
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## ✨ Fitur Utama (Key Features)
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+- **Modern & Responsive UI:** Desain antarmuka yang optimal di berbagai perangkat (Mobile, Tablet, Desktop) untuk memberikan pengalaman pengguna (UX) terbaik bagi calon mahasiswa maupun pengunjung.
+- **Component-Driven Architecture:** Dibangun dengan pendekatan modular. Setiap bagian web (Navbar, Profil, Kurikulum, FAQ, dll) dipisah menjadi komponen independen yang *reusable* dan mudah di-*maintenance*.
+- **SEO Optimized:** Memanfaatkan fitur *Server-Side Rendering (SSR)* dan *Static Site Generation (SSG)* dari Next.js untuk memastikan situs mudah ditemukan oleh mesin pencari.
+- **Static Assets & Media Optimization:** Pengelolaan aset gambar dan ikon secara efisien menggunakan tag `<Image>` bawaan Next.js untuk *loading* yang lebih cepat.
+- **Type-Safe:** Seluruh *codebase* ditulis dalam **TypeScript**, meminimalisir *runtime error* dan meningkatkan kualitas kode secara keseluruhan.
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## 🛠️ Teknologi yang Digunakan (Tech Stack)
 
-## Learn More
+* **Framework:** Next.js (v14/15 App Router)
+* **Library UI:** React.js
+* **Bahasa Pemrograman:** TypeScript
+* **Styling:** CSS / Tailwind CSS (berdasarkan global.css)
+* **Package Manager:** npm
+* **Deployment:** Vercel / Custom Domain Integration
 
-To learn more about Next.js, take a look at the following resources:
+## 🗂️ Struktur Proyek (Architecture Overview)
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+Proyek ini menggunakan struktur **App Router** modern dari Next.js. Logika antarmuka dipisahkan ke dalam folder `components` untuk menjaga kebersihan *codebase*.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+```text
+├── app/
+│   ├── components/      # Reusable UI Components
+│   │   ├── Navbar.tsx      # Navigasi utama
+│   │   ├── Opening.tsx     # Hero section/Landing area
+│   │   ├── Profile.tsx     # Profil Program Studi
+│   │   ├── kurikulum.tsx   # Informasi struktur kurikulum
+│   │   ├── akreditasi.tsx  # Informasi status akreditasi
+│   │   ├── ukt.tsx         # Informasi biaya pendidikan (UKT)
+│   │   ├── event.tsx & webinar.tsx # Modul acara dan seminar
+│   │   ├── Faq.tsx         # Frequently Asked Questions
+│   │   └── Footer.tsx      # Bagian kaki website
+│   ├── globals.css      # Global stylesheet
+│   ├── layout.tsx       # Root layout configuration (Metadata, Fonts)
+│   ├── page.tsx         # Entry point (Main Landing Page)
+│   ├── robots.ts        # Konfigurasi SEO bot
+│   └── sitemap.ts       # Konfigurasi Sitemap XML
+├── public/              # Direktori aset statis (Gambar, Ikon, SVG)
+├── next.config.ts       # Konfigurasi Next.js
+├── tsconfig.json        # Konfigurasi TypeScript
+└── package.json         # Dependensi proyek
